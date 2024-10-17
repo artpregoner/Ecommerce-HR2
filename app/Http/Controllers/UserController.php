@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+    public function dashboard()
+    {
+        // Logic for showing the employee dashboard
+        return view('user.maindash'); // Ensure this view exists
+    }
+
+    public function profile()
+    {
+        // Logic for showing employee profile
+        //return view('user.maindash'); // Ensure this view exists
+    }
+
+    public function requests()
+    {
+        // Logic for handling employee requests
+        //return view('user.maindash'); // Ensure this view exists
+    }
+}
+

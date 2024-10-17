@@ -25,19 +25,37 @@
 </head>
 
 <body>
-    <div class="dashboard-main-wrapper">
-        @include('layouts.admin-dash-layouts.topbar') <!-- Topbar included here -->
-        @include('layouts.admin-dash-layouts.sidebar') <!-- Sidebar included here -->
-        <div class="dashboard-wrapper">
-            <div class="dashboard-ecommerce">
-                <div class="container-fluid dashboard-content ">
-                    @include('layouts.admin-dash-layouts.pageheader') <!--pageheader -->
-                    @yield('content')<!--Content of dashboard-->
+    @if(Auth::check() && Auth::user()->role === 'admin')
+        <div class="dashboard-main-wrapper">
+            @include('layouts.admin-dash-layouts.topbar') <!-- Topbar included here -->
+            @include('layouts.admin-dash-layouts.sidebar') <!-- Sidebar included here -->
+            <div class="dashboard-wrapper">
+                <div class="dashboard-ecommerce">
+                    <div class="container-fluid dashboard-content ">
+                        @include('layouts.admin-dash-layouts.pageheader') <!--pageheader -->
+                        @yield('content')<!--Content of dashboard-->
+                    </div>
                 </div>
+                @include('layouts.admin-dash-layouts.footer')<!-- footer -->
             </div>
-            @include('layouts.admin-dash-layouts.footer')<!-- footer -->
         </div>
-    </div>
+    @endif
+
+    @if(Auth::check() && Auth::user()->role === 'user')
+        <div class="dashboard-main-wrapper">
+            @include('layouts.user-dash-layouts.topbar') <!-- Topbar included here -->
+            @include('layouts.user-dash-layouts.sidebar') <!-- Sidebar included here -->
+            <div class="dashboard-wrapper">
+                <div class="dashboard-ecommerce">
+                    <div class="container-fluid dashboard-content ">
+                        @include('layouts.user-dash-layouts.pageheader') <!--pageheader -->
+                        @yield('content')<!--Content of dashboard-->
+                    </div>
+                </div>
+                @include('layouts.user-dash-layouts.footer')<!-- footer -->
+            </div>
+        </div>
+    @endif
 
     <!-- Optional JavaScript -->
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>

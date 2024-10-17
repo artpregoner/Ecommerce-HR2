@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav flex-column">
                     <li class="nav-divider">
-                        Menu
+                        Employee Self-Service
                     </li>
                         <!-- ============================================================== -->
                         <!-- Dashboard --> 

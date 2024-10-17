@@ -2,34 +2,28 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use GuzzleHttp\Middleware;
 
-//Route::get('/', [AuthController::class, 'login']);
-//Route::post('/', [AuthController::class, 'auth_login']);
-
-
-//Route::get('/maindash', function () {return view('maindash');});
 
 // Login route
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
-
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 // Logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Protect the dashboard route with auth middleware
-//Route::get('/maindash', function () {return view('maindash');})->middleware('auth');
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('admin/maindash', [AdminController::class, 'dashboard'])->name('user.maindash');
+    // Add more admin-specific routes here
+});
 
-// Admin Dashboard - Protected Route
-Route::get('/admin/maindash', function () {
-    return view('admin.maindash'); // Create this view
-})->middleware('auth');
+Route::middleware(['auth', 'user'])->group(function () {
+    Route::get('user/maindash', [UserController::class, 'dashboard'])->name('user.maindash');
+    // Add more employee-specific routes here
+});
 
-// User Dashboard - Protected Route
-Route::get('/user/maindash', function () {
-    return view('user.maindash'); // Create this view
-})->middleware('auth');
 
 
 
