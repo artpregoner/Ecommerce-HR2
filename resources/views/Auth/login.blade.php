@@ -69,24 +69,6 @@
     <!-- Optional JavaScript -->
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <!--<script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-    
-            // Get username and password from the form inputs
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-    
-            // Simple validation for username and password
-            if (username === 'Admin' && password === 'admin') {
-                // Default to main dashboard
-                window.location.href = "{{url('maindash')}}";
-            } else {
-                // Incorrect info
-                alert('Incorrect username or password.');
-            }
-        });
-    </script>-->
 </body>
  
 </html>

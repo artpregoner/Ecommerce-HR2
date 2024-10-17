@@ -12,16 +12,22 @@ class UserController extends Controller
         return view('user.maindash'); // Ensure this view exists
     }
 
-    public function profile()
+    public function self_service()
     {
         // Logic for showing employee profile
-        //return view('user.maindash'); // Ensure this view exists
+        //return view('user.request_ticket'); // Ensure this view exists
     }
 
-    public function requests()
+    public function reimbursement()
+    {
+        // Logic for showing employee profile
+        //return view('user.request_ticket'); // Ensure this view exists
+    }
+
+    public function helpdesk()
     {
         // Logic for handling employee requests
-        //return view('user.maindash'); // Ensure this view exists
+        return view('user.helpdesk.request_ticket'); // Ensure this view exists
     }
 }
 

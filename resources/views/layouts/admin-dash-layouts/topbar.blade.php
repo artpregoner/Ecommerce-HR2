@@ -59,40 +59,8 @@ Whug John</span>Submit new Ticket
                         </li>
                     </ul>
                 </li>
-                {{-- <li class="nav-item dropdown connection">
-                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
-                    <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
-                        <li class="connection-list">
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                    <a href="#" class="connection-item"><img src="../template/assets/images/github.png" alt="" > <span>CORE 1</span></a>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                    <a href="#" class="connection-item"><img src="../template/assets/images/dribbble.png" alt="" > <span>CORE 2</span></a>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                    <a href="#" class="connection-item"><img src="../template/assets/images/dropbox.png" alt="" > <span>CORE 3</span></a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                    <a href="#" class="connection-item"><img src="../template/assets/images/bitbucket.png" alt=""> <span>HR 1</span></a>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                    <a href="#" class="connection-item"><img src="../template/assets/images/mail_chimp.png" alt="" ><span>HR 3</span></a>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
-                                    <a href="#" class="connection-item"><img src="../template/assets/images/slack.png" alt="" > <span>LOGISTIC</span></a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="conntection-footer"><a href="#">More</a></div>
-                        </li>
-                    </ul>
-                </li> --}}
                 <li class="nav-item dropdown nav-user">
-                    <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../template/assets/images/profile.png" alt="" class="user-avatar-md rounded-circle"></a>
+                    <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('template/assets/images/profile.png') }}" alt="" class="user-avatar-md rounded-circle"></a>
                     <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                         <div class="nav-user-info">
                             <h5 class="mb-0 text-white nav-user-name">{{ Auth::user()->name }}</h5>

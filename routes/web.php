@@ -21,6 +21,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth', 'user'])->group(function () {
     Route::get('user/maindash', [UserController::class, 'dashboard'])->name('user.maindash');
+    Route::get('user/helpdesk/request_ticket', [UserController::class, 'helpdesk'])->name('user.helpdesk.request_ticket');
     // Add more employee-specific routes here
 });
 
