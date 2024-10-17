@@ -27,7 +27,7 @@ class UserController extends Controller
     public function helpdesk()
     {
         // Logic for handling employee requests
-        return view('user.helpdesk.request_ticket'); // Ensure this view exists
+        return view('user.helpdesk.ticket'); // Ensure this view exists
     }
 }
 
