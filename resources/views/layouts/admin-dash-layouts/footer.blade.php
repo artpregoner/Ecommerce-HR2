@@ -10,6 +10,11 @@
                     <a href="javascript: void(0);">Support</a>
                     <a href="javascript: void(0);">Contact Us</a>
                 </div>
+                {{-- <div class="text-md-right footer-links d-none d-sm-block">
+                    <a href="javascript: void(0);">About</a>
+                    <a href="javascript: void(0);">Support</a>
+                    <a href="javascript: void(0);">Contact Us</a>
+                </div> --}}
             </div>
         </div>
     </div>
