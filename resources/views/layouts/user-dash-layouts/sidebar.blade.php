@@ -14,7 +14,7 @@
                         <!-- Dashboard --> 
                         <!-- ============================================================== -->
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{url('user/maindash')}}" aria-expanded="false" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                        <a class="nav-link" href="{{url('maindash')}}" aria-expanded="false" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                     </li>
                         <!-- ============================================================== -->
                         <!-- Emloyee Self-service -->

@@ -21,7 +21,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::middleware(['auth', 'user'])->group(function () {
-    Route::get('user/maindash', [UserController::class, 'dashboard'])->name('user.maindash');
+    Route::get('maindash', [UserController::class, 'dashboard'])->name('user.maindash');
     Route::resource('helpdesk', HelpdeskController::class);
 
 
