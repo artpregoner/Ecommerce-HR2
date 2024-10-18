@@ -48,7 +48,7 @@
                         Helpdesk
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('user/helpdesk/ticket')}}" aria-expanded="false"><i class="fas fa-fw  fa-envelope"></i>Ticket</a>
+                        <a class="nav-link" href="{{url('helpdesk')}}" aria-expanded="false"><i class="fas fa-fw  fa-envelope"></i>Ticket</a>
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link" href="{{url('helpdesk/ticket-inbox')}}" aria-expanded="false" ><i class="fas fa-inbox"></i>Inbox <span class="badge badge-secondary">New</span></a>

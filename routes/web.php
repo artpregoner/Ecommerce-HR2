@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HelpdeskController;
 use GuzzleHttp\Middleware;
 
 
@@ -21,11 +22,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth', 'user'])->group(function () {
     Route::get('user/maindash', [UserController::class, 'dashboard'])->name('user.maindash');
-    Route::get('user/helpdesk/ticket', [UserController::class, 'helpdesk'])->name('user.helpdesk.ticket');
-    // Add more employee-specific routes here
+    //Route::get('user/helpdesk/ticket', [UserController::class, 'helpdesk'])->name('user.helpdesk.ticket');
+    Route::resource('helpdesk', HelpdeskController::class);
+
+
 });
-
-
 
 
 
