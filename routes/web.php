@@ -16,13 +16,12 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('admin/maindash', [AdminController::class, 'dashboard'])->name('admin.maindash');
-    // Add more admin-specific routes here
+    Route::get('maindash', [AdminController::class, 'dashboard'])->name('admin.maindash');
+    Route::get('admin/tickets', [AdminController::class, 'adminTicketList'])->name('admin.tickets');
 });
 
 Route::middleware(['auth', 'user'])->group(function () {
     Route::get('user/maindash', [UserController::class, 'dashboard'])->name('user.maindash');
-    //Route::get('user/helpdesk/ticket', [UserController::class, 'helpdesk'])->name('user.helpdesk.ticket');
     Route::resource('helpdesk', HelpdeskController::class);
 
 

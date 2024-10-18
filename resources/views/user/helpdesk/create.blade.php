@@ -24,6 +24,14 @@
                             <select class="form-control" id="department" name="department" required>
                                 <option>Admin</option>
                                 <option>Finance</option>
+                                <option>Core 1</option>
+                                <option>Core 2</option>
+                                <option>Core 3</option>
+                                <option>LOGISTIC 1</option>
+                                <option>LOGISTIC 2</option>
+                                <option>HR 1</option>
+                                <option>HR 2</option>
+                                <option>HR 3</option>
                                 <!-- Add more options here -->
                             </select>
                         </div>
@@ -40,7 +48,11 @@
                             <label for="category">Category</label>
                             <select class="form-control" id="category" name="category" required>
                                 <option>Admin</option>
+                                <option>Finance</option>
                                 <option>Software Issue</option>
+                                <option>Hardware Issue</option>
+                                <option>Network Problem</option>
+                                <option>HR Query</option>
                                 <!-- Add more options here -->
                             </select>
                         </div>

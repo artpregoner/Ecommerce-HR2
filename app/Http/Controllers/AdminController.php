@@ -13,18 +13,18 @@ class AdminController extends Controller
         $totalEmployees = User::count();
         $totalTickets = Ticket::count();
         return view('admin.maindash', compact('totalTickets', 'totalEmployees'));
-        //return view('admin.maindash'); // Ensure this view exists
     }
 
-    public function users()
+    public function adminTicketList()
     {
-        // Logic for managing users (e.g., listing users)
-        //return view('admin.users'); // Ensure this view exists
+        // Fetch all tickets with associated user information
+        $tickets = Ticket::with('user')->get();
+
+        return view('admin.helpdesk.tickets', compact('tickets'));
     }
 
     public function settings()
     {
-        // Logic for admin settings
-        //return view('admin.settings'); // Ensure this view exists
+        
     }
 }
