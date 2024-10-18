@@ -16,7 +16,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('admin/maindash', [AdminController::class, 'dashboard'])->name('user.maindash');
+    Route::get('admin/maindash', [AdminController::class, 'dashboard'])->name('admin.maindash');
     // Add more admin-specific routes here
 });
 
