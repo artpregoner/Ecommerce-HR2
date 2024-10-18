@@ -229,11 +229,11 @@
         bindto: "#c3chart_category",
         data: {
             columns: [
-                ['Men', 100],
-                ['Women', 80],
-                ['Accessories', 50],
-                ['Children', 40],
-                ['Apperal', 20],
+                ['TotalEmployee', 3],
+                ['NewHires', 5],
+                ['Visitor', 100],
+                ['HelpdeskTickets', 10],
+                ['SystemDevelopment', 40],
 
             ],
             type: 'donut',
@@ -243,11 +243,11 @@
             onmouseout: function(d, i) { console.log("onmouseout", d, i); },
 
             colors: {
-                Men: '#5969ff',
-                Women: '#ff407b',
-                Accessories: '#25d5f2',
-                Children: '#ffc750',
-                Apperal: '#2ec551',
+                TotalEmployee: '#5969ff',
+                NewHires: '#ff407b',
+                Visitor: '#25d5f2',
+                HelpdeskTickets: '#ffc750',
+                SystemDevelopment: '#2ec551',
 
 
 
