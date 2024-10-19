@@ -17,6 +17,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/maindash', [AdminController::class, 'dashboard'])->name('admin.maindash');
+    Route::get('workforce', [AdminController::class, 'workforce'])->name('admin.workforce-analytics.workforce');
 });
 
 Route::middleware(['auth', 'user'])->group(function () {

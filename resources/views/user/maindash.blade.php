@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-xl-2 col-lg-4 col-md-4 col-sm-4 col-12">
                         <div class="text-center">
-                            <img src="{{ asset('template/assets/images/profile.png') }}" alt="User Avatar" class="rounded-circle user-avatar-xxl">
+                            <img src="{{ asset('template/assets/images/user1.png') }}" alt="User Avatar" class="rounded-circle user-avatar-xxl">
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-8 col-md-8 col-sm-8 col-12">

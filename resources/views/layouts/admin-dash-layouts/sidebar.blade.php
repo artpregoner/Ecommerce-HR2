@@ -36,7 +36,7 @@
                         <!-- Workforce Analytics -->
                         <!-- ============================================================== -->
                     <li class="nav-item">
-                        <a class="nav-link " href="{{url('workforce-analytics/workforce-analytics')}}" aria-expanded="false"><i class="fas fa-fw fa-chart-bar"></i>Workforce Analytics</a>
+                        <a class="nav-link " href="{{url('workforce')}}" aria-expanded="false"><i class="fas fa-fw fa-chart-bar"></i>Workforce Analytics</a>
                     </li>
                         <!-- ============================================================== -->
                         <!-- Employee Engagement -->

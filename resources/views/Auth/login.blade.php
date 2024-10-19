@@ -25,6 +25,43 @@
         padding-top: 40px;
         padding-bottom: 40px;
     }
+    .splash-container {
+    width: 100%;
+    max-width: 375px;
+    padding: 15px;
+    margin: auto;
+    background-color: #E9DCC9;
+    }
+
+    .splash-container .card-header {
+        padding: 10px;
+    
+    }
+
+    .splash-description {
+        text-align: center;
+        display: block;
+        line-height: 20px;
+        font-size: 1rem;
+        margin-top: 20px;
+        
+    }
+
+    .splash-title {
+        text-align: center;
+        display: block;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .splash-container .card-footer-item {
+        padding: 12px 28px;
+    }
+
+    #icons {
+        position: relative;
+        margin-left: 37%;
+    }
     </style>
 </head>
 

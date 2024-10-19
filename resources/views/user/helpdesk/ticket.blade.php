@@ -29,7 +29,7 @@
                                     <th>Department</th>
                                     <th style="width: 80px;">Priority</th>
                                     <th style="width: 80px;">Category</th>
-                                    <th style="width: 80px;">Created At</th>
+                                    <th style="width: 100px;">Created at</th>
                                     <th style="width: 90px;">Actions</th> 
                                 </tr>
                             </thead>

@@ -23,10 +23,10 @@
                                 <th>Subject</th> <!-- ticket database -->
                                 <th>Description</th> <!-- ticket database -->
                                 <th>Department</th> <!-- ticket database -->
-                                <th>Priority</th> <!-- ticket database -->
-                                <th>Category</th> <!-- ticket database -->
-                                <th>Created at</th> <!-- ticket database -->
-                                <th>Actions</th> <!-- Actions: Edit, Delete -->
+                                <th style="width: 80px;">Priority</th> <!-- ticket database -->
+                                <th style="width: 80px;">Category</th> <!-- ticket database -->
+                                <th style="width: 90px;">Created at</th> <!-- ticket database -->
+                                <th style="width: 90px;">Actions</th> <!-- Actions: Edit, Delete -->
                             </tr>
                         </thead>
                         <tbody>
@@ -46,8 +46,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-outline-light" onclick="return confirm('Are you sure you want to delete this ticket?');">
-                                                <i class="far fa-trash-alt"></i> Delete
-                                            </button>
+                                                <i class="far fa-trash-alt"></i> Delete</button>
                                         </form>
                                     </div>
                                 </td> 

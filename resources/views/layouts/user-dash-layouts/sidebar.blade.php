@@ -24,7 +24,7 @@
                         <div id="submenu-2" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Update Information<span class="badge badge-secondary">New</span></a>
+                                    <a class="nav-link" href="#">Update Information</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="general.html">Leave Management </a>

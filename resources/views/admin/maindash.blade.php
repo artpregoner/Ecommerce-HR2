@@ -4,7 +4,6 @@
 @section('active-header')Main Dashboard @endsection <!--active pageheader-->
 
 @section('content')
-
 <h1>Welcome to the Admin Dashboard, {{ Auth::user()->name }}</h1>
 <div class="ecommerce-widget">
 
@@ -53,7 +52,7 @@
                 <div class="card-body">
                     <h5 class="text-muted">Visitor</h5>
                     <div class="metric-value d-inline-block">
-                        <h1 class="mb-1">13000</h1>
+                        <h1 class="mb-1">130</h1>
                     </div>
                     <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                     </div>
@@ -84,15 +83,6 @@
     </div>
 
     <div class="row">
-        <!-- ============================================================== -->
-        <!-- total revenue  -->
-        <!-- ============================================================== -->
-
-        
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- category revenue  -->
-        <!-- ============================================================== -->
         <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
             <div class="card">
                 <h5 class="card-header">Category</h5>
