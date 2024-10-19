@@ -30,6 +30,7 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::put('user/helpdesk/{ticket}', [HelpdeskController::class, 'update'])->name('helpdesk.update');
     Route::delete('/helpdesk/{ticket}', [HelpdeskController::class, 'destroy'])->name('helpdesk.destroy');
 
+
 });
 
 

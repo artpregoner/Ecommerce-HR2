@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ticket;
+use App\Models\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -13,8 +14,13 @@ class HelpdeskController extends Controller
     public function index()
     {
         // Fetch tickets only for the logged-in user
+        // Get the currently authenticated user
+        $user = Auth::user();
+
+        // Retrieve the total number of tickets associated with this user
+        $totalTickets = Ticket::where('user_id', $user->id)->count();
         $tickets = Ticket::where('user_id', Auth::id())->get();
-        return view('user.helpdesk.ticket', compact('tickets'));
+        return view('user.helpdesk.ticket', compact('tickets','totalTickets'));
     }
 
     // Show the form to create a new ticket
@@ -80,44 +86,44 @@ class HelpdeskController extends Controller
             return redirect()->route('user.helpdesk.ticket')->with('success', 'Ticket deleted successfully.');
         }
 
-        // Update a specific ticket
-public function update(Request $request, Ticket $ticket)
-{
-    // Ensure the ticket belongs to the logged-in user
-    if ($ticket->user_id !== Auth::id()) {
-        abort(403, 'Unauthorized action.');
-    }
+            // Update a specific ticket
+        public function update(Request $request, Ticket $ticket)
+        {
+            // Ensure the ticket belongs to the logged-in user
+            if ($ticket->user_id !== Auth::id()) {
+                abort(403, 'Unauthorized action.');
+            }
 
-    // Validate the incoming request
-    $request->validate([
-        'subject' => 'required',
-        'description' => 'required',
-        'department' => 'required',
-        'priority' => 'required',
-        'category' => 'required',
-        'file' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
-    ]);
+            // Validate the incoming request
+            $request->validate([
+                'subject' => 'required',
+                'description' => 'required',
+                'department' => 'required',
+                'priority' => 'required',
+                'category' => 'required',
+                'file' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            ]);
 
-    // Handle file upload
-    if ($request->hasFile('file')) {
-        // Delete old file if it exists
-        if ($ticket->file_path) {
-            Storage::disk('public')->delete($ticket->file_path);
+            // Handle file upload
+            if ($request->hasFile('file')) {
+                // Delete old file if it exists
+                 if ($ticket->file_path) {
+                    Storage::disk('public')->delete($ticket->file_path);
+                }
+                $ticket->file_path = $request->file('file')->store('tickets', 'public');
+            }
+
+            // Update the ticket with the new data
+            $ticket->update([
+                'subject' => $request->subject,
+                'description' => $request->description,
+                'department' => $request->department,
+                'priority' => $request->priority,
+                'category' => $request->category,
+                'file_path' => $ticket->file_path,
+            ]);
+
+            return redirect()->route('user.helpdesk.ticket')->with('success', 'Ticket updated successfully.');
         }
-        $ticket->file_path = $request->file('file')->store('tickets', 'public');
-    }
-
-    // Update the ticket with the new data
-    $ticket->update([
-        'subject' => $request->subject,
-        'description' => $request->description,
-        'department' => $request->department,
-        'priority' => $request->priority,
-        'category' => $request->category,
-        'file_path' => $ticket->file_path,
-    ]);
-
-    return redirect()->route('user.helpdesk.ticket')->with('success', 'Ticket updated successfully.');
-}
 
 }

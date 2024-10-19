@@ -1,0 +1,70 @@
+@extends('layouts.app')
+@section('title')Helpdesk - Reply @endsection
+@section('header')Helpdesk @endsection <!--pageheader-->
+@section('active-header')View Reply @endsection <!--active pageheader-->
+
+@section('content')
+<div class="dashboard-wrapper">
+    <div class="main-container">
+        <div class="content-container">
+            <div class="chat-module">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="email-title">
+                            <span class="icon"><i class="fas fa-inbox"></i></span> Ticket details
+                        </div>
+                    </div>
+                    <div class="form-group row text-right ml-auto">
+                        <div class="col col-sm-10 col-lg-12 offset-sm-10 offset-lg-5 ml-auto">
+                            <button type="button" class="btn btn-space btn-primary" onclick="window.history.back();">
+                                Return to Ticket Lists
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-module-top">
+                    <div class="chat-module-body">
+                        @foreach($messages as $message)
+                            <div class="media chat-item">
+                                <img alt="" class="rounded-circle user-avatar-lg">
+                                <div class="media-body">
+                                    <div class="chat-item-title">
+                                        <span class="chat-item-author">{{ ucfirst($message->user->role) }}</span>
+                                        <span>{{ $message->created_at->diffForHumans() }}</span>
+                                    </div>
+                                    <div class="chat-item-body">
+                                        <p>{{ $message->content }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="email editor">
+                    <form action="{{ route('helpdesk.reply', $ticket->id) }}" method="POST">
+                        @csrf
+                        <div class="col-md-12 p-0">
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="message">Write your message</label>
+                                <textarea class="form-control" id="message" name="content" rows="6" placeholder="Type your message" required></textarea>
+                            </div>
+                        </div>
+                        <div class="email action-send">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    <button class="btn btn-primary btn-space" type="submit">
+                                        <i class="icon s7-mail"></i> Send
+                                    </button>
+                                    <button class="btn btn-secondary btn-space" type="button" onclick="document.getElementById('message').value = '';">
+                                        <i class="icon s7-close"></i> Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
