@@ -53,87 +53,71 @@ class HelpdeskController extends Controller
             'user_id' => Auth::id(),  // Associate the ticket with the logged-in user
         ]);
 
-        return redirect()->route('user.helpdesk.tickets.index')->with('success', 'Ticket created successfully.');
+        return redirect()->route('user.helpdesk.ticket')->with('success', 'Ticket created successfully.');
     }
-
-    // Show a specific ticket
-    public function show(Ticket $ticket)
-    {
-        // Ensure the ticket belongs to the logged-in user
-        if ($ticket->user_id !== Auth::id()) {
-            abort(403, 'Unauthorized action.');
-        }
-
-        return view('user.helpdesk.show', compact('ticket'));
-    }
-
-    // Show the form to edit a specific ticket
-    public function edit(Ticket $ticket)
-    {
-        // Ensure the ticket belongs to the logged-in user
-        if ($ticket->user_id !== Auth::id()) {
-            abort(403, 'Unauthorized action.');
-        }
-
-        return view('user.helpdesk.edit', compact('ticket'));
-    }
-
-    // Update a specific ticket
-    public function update(Request $request, Ticket $ticket)
-    {
-        // Ensure the ticket belongs to the logged-in user
-        if ($ticket->user_id !== Auth::id()) {
-            abort(403, 'Unauthorized action.');
-        }
-
-        // Validate the incoming request
-        $request->validate([
-            'subject' => 'required',
-            'description' => 'required',
-            'department' => 'required',
-            'priority' => 'required',
-            'category' => 'required',
-            'file' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
-        ]);
-
-        // Handle file upload
-        if ($request->hasFile('file')) {
-            // Delete old file if it exists
-            if ($ticket->file_path) {
-                Storage::disk('public')->delete($ticket->file_path);
+            // Show the form to edit a specific ticket
+        public function edit(Ticket $ticket)
+        {
+            // Ensure the ticket belongs to the logged-in user
+            if ($ticket->user_id !== Auth::id()) {
+                abort(403, 'Unauthorized action.');
             }
-            $ticket->file_path = $request->file('file')->store('tickets', 'public');
+
+            return view('user.helpdesk.edit', compact('ticket'));
         }
 
-        // Update the ticket with the new data
-        $ticket->update([
-            'subject' => $request->subject,
-            'description' => $request->description,
-            'department' => $request->department,
-            'priority' => $request->priority,
-            'category' => $request->category,
-            'file_path' => $ticket->file_path,
-        ]);
+        // Delete a specific ticket
+        public function destroy(Ticket $ticket)
+        {
+            // Ensure the ticket belongs to the logged-in user
+            if ($ticket->user_id !== Auth::id()) {
+                abort(403, 'Unauthorized action.');
+            }
 
-        return redirect()->route('user.helpdesk.tickets.index')->with('success', 'Ticket updated successfully.');
+            // Delete the ticket
+            $ticket->delete();
+
+            return redirect()->route('user.helpdesk.ticket')->with('success', 'Ticket deleted successfully.');
+        }
+
+        // Update a specific ticket
+public function update(Request $request, Ticket $ticket)
+{
+    // Ensure the ticket belongs to the logged-in user
+    if ($ticket->user_id !== Auth::id()) {
+        abort(403, 'Unauthorized action.');
     }
 
-    // Delete a specific ticket
-    public function destroy(Ticket $ticket)
-    {
-        // Ensure the ticket belongs to the logged-in user
-        if ($ticket->user_id !== Auth::id()) {
-            abort(403, 'Unauthorized action.');
-        }
+    // Validate the incoming request
+    $request->validate([
+        'subject' => 'required',
+        'description' => 'required',
+        'department' => 'required',
+        'priority' => 'required',
+        'category' => 'required',
+        'file' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
+    ]);
 
-        // Delete the file if it exists
+    // Handle file upload
+    if ($request->hasFile('file')) {
+        // Delete old file if it exists
         if ($ticket->file_path) {
             Storage::disk('public')->delete($ticket->file_path);
         }
-
-        // Delete the ticket
-        $ticket->delete();
-
-        return redirect()->route('user.helpdesk.tickets.index')->with('success', 'Ticket deleted successfully.');
+        $ticket->file_path = $request->file('file')->store('tickets', 'public');
     }
+
+    // Update the ticket with the new data
+    $ticket->update([
+        'subject' => $request->subject,
+        'description' => $request->description,
+        'department' => $request->department,
+        'priority' => $request->priority,
+        'category' => $request->category,
+        'file_path' => $ticket->file_path,
+    ]);
+
+    return redirect()->route('user.helpdesk.ticket')->with('success', 'Ticket updated successfully.');
+}
+
 }

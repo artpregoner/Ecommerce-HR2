@@ -23,9 +23,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::middleware(['auth', 'user'])->group(function () {
     Route::get('user/maindash', [UserController::class, 'dashboard'])->name('user.maindash');
     Route::get('schedule', [UserController::class, 'self_service'])->name('user.self-service.schedule');
-    Route::resource('helpdesk', HelpdeskController::class);
-    Route::resource('user/helpdesk/tickets', HelpdeskController::class);
-
+    Route::get('user/helpdesk/tickets', [HelpdeskController::class, 'index'])->name('user.helpdesk.ticket');
+    Route::get('user/helpdesk/create', [HelpdeskController::class, 'create'])->name('helpdesk.create');
+    Route::post('user/helpdesk/tickets', [HelpdeskController::class, 'store'])->name('helpdesk.store');
+    Route::get('user/helpdesk/{ticket}/edit', [HelpdeskController::class, 'edit'])->name('helpdesk.edit');
+    Route::put('user/helpdesk/{ticket}', [HelpdeskController::class, 'update'])->name('helpdesk.update');
+    Route::delete('/helpdesk/{ticket}', [HelpdeskController::class, 'destroy'])->name('helpdesk.destroy');
 
 });
 

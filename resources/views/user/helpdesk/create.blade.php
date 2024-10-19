@@ -1,9 +1,9 @@
-{{-- @extends('layouts.app')
+@extends('layouts.app')
 @section('title')Helpdesk - Create Ticket @endsection
 @section('header')Helpdesk @endsection <!--pageheader-->
-@section('active-header')Create Ticket @endsection <!--active pageheader--> --}}
+@section('active-header')Create Ticket @endsection <!--active pageheader-->
 
-{{-- @section('content')
+@section('content')
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
@@ -63,7 +63,7 @@
                         <div class="form-group row text-right">
                             <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0 ml-auto">
                                 <button type="submit" class="btn btn-space btn-primary">Submit</button>
-                                <a href="{{ route('helpdesk.index') }}" class="btn btn-space btn-secondary">Cancel</a>
+                                <a href="{{ route('user.helpdesk.ticket') }}" class="btn btn-space btn-secondary">Cancel</a>
                             </div>
                         </div>
                     </form>
@@ -71,27 +71,5 @@
             </div>
         </div>
     </div>
-@endsection --}}
+@endsection
 
-
-{{-- old one --}}
-{{-- @section('content')
-<div>
-    <h1>Create Ticket</h1>
-    <form action="{{ route('tickets.store') }}" method="POST">
-        @csrf
-        <div>
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" required>
-        </div>
-        <div>
-            <label for="status">Status:</label>
-            <select id="status" name="status">
-                <option value="Pending">Pending</option>
-                <option value="Resolved">Resolved</option>
-            </select>
-        </div>
-        <button type="submit">Create Ticket</button>
-    </form>
-</div>
-@endsection --}}

@@ -1,9 +1,9 @@
-{{-- @extends('layouts.app')
+@extends('layouts.app')
 @section('title')Helpdesk - My Tickets @endsection
 @section('header')Helpdesk @endsection <!--pageheader-->
-@section('active-header')My Tickets @endsection <!--active pageheader--> --}}
+@section('active-header')My Tickets @endsection <!--active pageheader-->
 
-{{-- @section('content')
+@section('content')
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
@@ -63,90 +63,6 @@
             </div>
         </div>
     </div>
-@endsection --}}
+@endsection
 
-
-
-
-{{-- old one --}}
-{{-- @section('content')
-<div>
-    <h1>Your Tickets</h1>
-    @if (session('success'))
-        <div>{{ session('success') }}</div>
-    @endif
-    <table>
-        <thead>
-            <tr>
-                <th>Subject</th>
-                <th>Created At</th>
-                <th>Updated At</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($tickets as $ticket)
-            <tr>
-                <td>{{ $ticket->subject }}</td>
-                <td>{{ $ticket->created_at }}</td>
-                <td>{{ $ticket->updated_at }}</td>
-                <td>{{ $ticket->status }}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-    <a href="{{ route('tickets.create') }}">Create New Ticket</a>
-</div>
-@endsection --}}
-
-{{-- @section('content')
-<div class="row">
-    <!-- ============================================================== -->
-    <!-- basic table  -->
-    <!-- ============================================================== -->
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-        <div class="card">
-            <div class="row">
-                <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-3 pr-3">
-                    <h5 class="card-header">My Tickets</h5>
-                </div>
-                <div class="col-sm-6 text-right">
-                    <button type="submit" class="btn btn-space btn-primary" href="{{ route('user/helpdesk/new') }}">New Ticket</button>
-                </div>
-                @if (session('success'))
-                    <div>{{ session('success') }}</div>
-                @endif
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered first">
-                        <thead>
-                            <tr>
-                                <th style="width: 500px;">SUBJECT</th>
-                                <th>CREATED AT</th>
-                                <th>UPDATED AT</th>
-                                <th>STATUS</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($tickets as $ticket)
-                            <tr>
-                                <td>{{ $ticket->subject }}</td>
-                                <td>{{ $ticket->created_at }}</td>
-                                <td>{{ $ticket->updated_at }}</td>
-                                <td>{{ $ticket->status }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    <br>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- end basic table  -->
-    <!-- ============================================================== -->
-</div>  
-@endsection --}}
     
