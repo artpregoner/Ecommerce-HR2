@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ticket;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class HelpdeskController extends Controller
 {
@@ -52,7 +53,7 @@ class HelpdeskController extends Controller
             'user_id' => Auth::id(),  // Associate the ticket with the logged-in user
         ]);
 
-        return redirect()->route('helpdesk.index')->with('success', 'Ticket created successfully.');
+        return redirect()->route('user.helpdesk.tickets.index')->with('success', 'Ticket created successfully.');
     }
 
     // Show a specific ticket
@@ -96,13 +97,13 @@ class HelpdeskController extends Controller
         ]);
 
         // Handle file upload
-        // if ($request->hasFile('file')) {
-        //     // Delete old file if it exists
-        //     if ($ticket->file_path) {
-        //         \Storage::disk('public')->delete($ticket->file_path);
-        //     }
-        //     $ticket->file_path = $request->file('file')->store('tickets', 'public');
-        // }
+        if ($request->hasFile('file')) {
+            // Delete old file if it exists
+            if ($ticket->file_path) {
+                Storage::disk('public')->delete($ticket->file_path);
+            }
+            $ticket->file_path = $request->file('file')->store('tickets', 'public');
+        }
 
         // Update the ticket with the new data
         $ticket->update([
@@ -114,7 +115,7 @@ class HelpdeskController extends Controller
             'file_path' => $ticket->file_path,
         ]);
 
-        return redirect()->route('helpdesk.index')->with('success', 'Ticket updated successfully.');
+        return redirect()->route('user.helpdesk.tickets.index')->with('success', 'Ticket updated successfully.');
     }
 
     // Delete a specific ticket
@@ -126,13 +127,13 @@ class HelpdeskController extends Controller
         }
 
         // Delete the file if it exists
-        // if ($ticket->file_path) {
-        //     \Storage::disk('public')->delete($ticket->file_path);
-        // }
+        if ($ticket->file_path) {
+            Storage::disk('public')->delete($ticket->file_path);
+        }
 
         // Delete the ticket
         $ticket->delete();
 
-        return redirect()->route('helpdesk.index')->with('success', 'Ticket deleted successfully.');
+        return redirect()->route('user.helpdesk.tickets.index')->with('success', 'Ticket deleted successfully.');
     }
 }

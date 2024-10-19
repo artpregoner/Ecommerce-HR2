@@ -13,7 +13,7 @@ class Ticket extends Model
         'priority',
         'category',
         'file_path',
-        'user_id', // Ensure user_id is fillable
+        'user_id', 
     ];
 
     public function user()

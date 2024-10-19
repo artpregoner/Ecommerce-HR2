@@ -16,13 +16,15 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('maindash', [AdminController::class, 'dashboard'])->name('admin.maindash');
-    Route::get('admin/tickets', [AdminController::class, 'adminTicketList'])->name('admin.tickets');
+    Route::get('admin/maindash', [AdminController::class, 'dashboard'])->name('admin.maindash');
+    Route::get('admin/helpdesk/tickets', [AdminController::class, 'adminTicketList'])->name('admin.tickets');
 });
 
 Route::middleware(['auth', 'user'])->group(function () {
-    Route::get('maindash', [UserController::class, 'dashboard'])->name('user.maindash');
+    Route::get('user/maindash', [UserController::class, 'dashboard'])->name('user.maindash');
+    Route::get('schedule', [UserController::class, 'self_service'])->name('user.self-service.schedule');
     Route::resource('helpdesk', HelpdeskController::class);
+    Route::resource('user/helpdesk/tickets', HelpdeskController::class);
 
 
 });

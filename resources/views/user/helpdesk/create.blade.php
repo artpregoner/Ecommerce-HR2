@@ -1,9 +1,9 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 @section('title')Helpdesk - Create Ticket @endsection
 @section('header')Helpdesk @endsection <!--pageheader-->
-@section('active-header')Create Ticket @endsection <!--active pageheader-->
+@section('active-header')Create Ticket @endsection <!--active pageheader--> --}}
 
-@section('content')
+{{-- @section('content')
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
@@ -71,9 +71,10 @@
             </div>
         </div>
     </div>
-@endsection
+@endsection --}}
 
 
+{{-- old one --}}
 {{-- @section('content')
 <div>
     <h1>Create Ticket</h1>

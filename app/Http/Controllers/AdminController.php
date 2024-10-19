@@ -19,12 +19,7 @@ class AdminController extends Controller
     {
         // Fetch all tickets with associated user information
         $tickets = Ticket::with('user')->get();
-
         return view('admin.helpdesk.tickets', compact('tickets'));
     }
 
-    public function settings()
-    {
-        
-    }
 }

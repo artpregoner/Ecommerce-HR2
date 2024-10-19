@@ -14,7 +14,7 @@
                         <!-- Dashboard --> 
                         <!-- ============================================================== -->
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{url('maindash')}}" aria-expanded="false" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                        <a class="nav-link" href="{{url('user/maindash')}}" aria-expanded="false" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                     </li>
                         <!-- ============================================================== -->
                         <!-- Emloyee Self-service -->
@@ -30,7 +30,7 @@
                                     <a class="nav-link" href="general.html">Leave Management </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="general.html">Schedule </a>
+                                    <a class="nav-link" href="{{url('schedule')}}">Schedule </a>
                                 </li>
                             </ul>
                         </div>
@@ -48,7 +48,7 @@
                         Helpdesk
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('helpdesk')}}" aria-expanded="false"><i class="fas fa-fw  fa-envelope"></i>Ticket</a>
+                        <a class="nav-link" href="{{url('user/helpdesk/tickets')}}" aria-expanded="false"><i class="fas fa-fw  fa-envelope"></i>Ticket</a>
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link" href="{{url('helpdesk/ticket-inbox')}}" aria-expanded="false" ><i class="fas fa-inbox"></i>Inbox <span class="badge badge-secondary">New</span></a>
