@@ -62,6 +62,16 @@
         position: relative;
         margin-left: 37%;
     }
+    .top-dot {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 15px;
+        height: 15px;
+        background-color: #463426;
+        border-radius: 50%; 
+        cursor: pointer; 
+        }
     </style>
 </head>
 
@@ -69,9 +79,10 @@
     <!-- ============================================================== -->
     <!-- login page  -->
     <!-- ============================================================== -->
+    <div class="top-dot" onclick="window.location='{{ route('register') }}';"></div> <!-- Add route here -->
     <div class="splash-container">
         <div class="card ">
-            <div class="card-header text-center"><a href="{{ route('register') }}"><img src="../template/assets/images/storelogo.png" alt="logo" style="width: 200px"></a><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-header text-center"><a href="#"><img src="../template/assets/images/storelogo.png" alt="logo" style="width: 200px"></a><span class="splash-description">Please enter your user information.</span></div>
             <div class="card-body" id="loginForm">
                 @include('components.invalid_information')
                 <form action="{{ route('login.post') }}" method="post">
@@ -90,13 +101,13 @@
                     <button type="submit" class="btn btn-primary btn-lg btn-block" style="background-color: #463426; border: 2px solid #463426;">Sign in</button>
                 </form>
             </div>
-            <!--<div class="card-footer bg-white p-0  ">
+            {{-- <div class="card-footer bg-white p-0  ">
                 <div class="card-footer-item card-footer-item-bordered">
                     <a href="#" class="footer-link">Create An Account</a></div>
                 <div class="card-footer-item card-footer-item-bordered">
                     <a href="#" class="footer-link">Forgot Password</a>
                 </div>
-            </div>-->
+            </div> --}}
         </div>
     </div>
   
