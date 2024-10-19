@@ -12,11 +12,12 @@ class UserMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role === 'user') { // Replace 'user' with the appropriate role name
+        if (Auth::check() && Auth::user()->role === 'user') { 
             return $next($request);
         }
         
         // Redirect to a suitable page if the user is not a user
-        return redirect()->route('login'); // Change this to where you want to redirect
+        // return redirect()->route('login');
+        return abort(403, 'Unauthorized action.'); // Change this to where you want to redirect
     }
 }

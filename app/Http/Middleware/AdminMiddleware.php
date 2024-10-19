@@ -17,6 +17,7 @@ class AdminMiddleware
         }
         
         // Redirect to a suitable page if the user is not an admin
-        return redirect()->route('login'); // Change this to where you want to redirect
+        return abort(403, 'Unauthorized action.');
+        // return redirect()->route('login'); // Change this to where you want to redirect
     }
 }

@@ -35,7 +35,7 @@
                 <div class="card-body">
                     <h5 class="text-muted">New Hires</h5>
                     <div class="metric-value d-inline-block">
-                        <h1 class="mb-1">5</h1>
+                        <h1 class="mb-1">{{ $totalEmployees }}</h1>
                     </div>
                     <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                     </div>
