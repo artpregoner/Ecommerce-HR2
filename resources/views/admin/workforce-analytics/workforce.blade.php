@@ -1,8 +1,12 @@
 @extends('layouts.app')
-@section('title')Dashboard @endsection
-@section('header')Dashboard @endsection <!--pageheader-->
-@section('active-header')Main Dashboard @endsection <!--active pageheader-->
+@section('title')Workforce @endsection
+@section('header')Workforce  @endsection <!--pageheader-->
+@section('active-header')Workforce Analytics @endsection <!--active pageheader-->
 
 @section('content')
-<h1>Welcome to the Admin Dashboard, {{ Auth::user()->name }}</h1>
+<div class="dashboard-wrapper">
+    <div class="row">
+        
+    </div>
+</div>
 @endsection

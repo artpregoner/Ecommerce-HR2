@@ -1,4 +1,45 @@
- 
+     // ============================================================== 
+    // Revenue By Categories
+    // ============================================================== 
+
+    var chart = c3.generate({
+        bindto: "#c3chart_category",
+        data: {
+            columns: [
+                ['TotalEmployee', 4],
+                ['NewHires', 4],
+                ['TurnoverRate', 10],
+                ['HelpdeskTickets', 10],
+                ['SystemDevelopment', 40],
+
+            ],
+            type: 'donut',
+
+            onclick: function(d, i) { console.log("onclick", d, i); },
+            onmouseover: function(d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function(d, i) { console.log("onmouseout", d, i); },
+
+            colors: {
+                TotalEmployee: '#5969ff',
+                NewHires: '#ff407b',
+                TurnoverRate: '#25d5f2',
+                HelpdeskTickets: '#ffc750',
+                SystemDevelopment: '#2ec551',
+
+
+
+            }
+        },
+        donut: {
+            label: {
+                show: false
+            }
+        },
+
+
+
+    });
+
     
     $(function() {
         "use strict";
@@ -196,70 +237,32 @@
 
 
 
+
+
     // ============================================================== 
     // Total Revenue
     // ============================================================== 
-    Morris.Area({
-        element: 'morris_totalrevenue',
-        behaveLikeLine: true,
-        data: [
-            { x: '2016 Q1', y: 0, },
-            { x: '2016 Q2', y: 7500, },
-            { x: '2017 Q3', y: 15000, },
-            { x: '2017 Q4', y: 22500, },
-            { x: '2018 Q5', y: 30000, },
-            { x: '2018 Q6', y: 40000, }
-        ],
-        xkey: 'x',
-        ykeys: ['y'],
-        labels: ['Y'],
-        lineColors: ['#5969ff'],
-        resize: true
+    // Morris.Area({
+    //     element: 'morris_totalrevenue',
+    //     behaveLikeLine: true,
+    //     data: [
+    //         { x: '2016 Q1', y: 0, },
+    //         { x: '2016 Q2', y: 7500, },
+    //         { x: '2017 Q3', y: 15000, },
+    //         { x: '2017 Q4', y: 22500, },
+    //         { x: '2018 Q5', y: 30000, },
+    //         { x: '2018 Q6', y: 40000, }
+    //     ],
+    //     xkey: 'x',
+    //     ykeys: ['y'],
+    //     labels: ['Y'],
+    //     lineColors: ['#5969ff'],
+    //     resize: true
 
-    });
-
-
-
-
-    // ============================================================== 
-    // Revenue By Categories
-    // ============================================================== 
-
-    var chart = c3.generate({
-        bindto: "#c3chart_category",
-        data: {
-            columns: [
-                ['TotalEmployee', 3],
-                ['NewHires', 5],
-                ['Visitor', 100],
-                ['HelpdeskTickets', 10],
-                ['SystemDevelopment', 40],
-
-            ],
-            type: 'donut',
-
-            onclick: function(d, i) { console.log("onclick", d, i); },
-            onmouseover: function(d, i) { console.log("onmouseover", d, i); },
-            onmouseout: function(d, i) { console.log("onmouseout", d, i); },
-
-            colors: {
-                TotalEmployee: '#5969ff',
-                NewHires: '#ff407b',
-                Visitor: '#25d5f2',
-                HelpdeskTickets: '#ffc750',
-                SystemDevelopment: '#2ec551',
+    // });
 
 
 
-            }
-        },
-        donut: {
-            label: {
-                show: false
-            }
-        },
 
 
-
-    });
 
