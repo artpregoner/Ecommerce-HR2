@@ -231,3 +231,8 @@
     position: absolute;
     pointer-events: none; /* Prevent interaction */
 }
+
+
+canvas {
+    height: 400px; /* Set height according to your needs */
+}

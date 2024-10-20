@@ -319,52 +319,64 @@ function createAbsenteeismRateChart() {
 
 // Call the Absenteeism Rate Chart function
 
+// var chart = c3.generate({
+//     bindto: "#department-category",
+//     data: {
+//         columns: [
+//             ['TotalEmployee', 4],
+//             ['NewHires', 4],
+//             ['TurnoverRate', 10],
+//             ['HelpdeskTickets', 10],
+//             ['SystemDevelopment', 30],
+
+//         ],
+//         type: 'donut',
+
+//         onclick: function(d, i) { console.log("onclick", d, i); },
+//         onmouseover: function(d, i) { console.log("onmouseover", d, i); },
+//         onmouseout: function(d, i) { console.log("onmouseout", d, i); },
+
+//         colors: {
+//             TotalEmployee: '#5969ff',
+//             NewHires: '#ff407b',
+//             TurnoverRate: '#25d5f2',
+//             HelpdeskTickets: '#ffc750',
+//             SystemDevelopment: '#2ec551',
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    createAbsenteeismRateChart();
+
+//         }
+//     },
+//     donut: {
+//         label: {
+//             show: false
+//         }
+//     },
+
+
+
+// });
+    var chart = new Chartist.Pie('.ct-chart-category', {
+        series: [60, 30, 30],
+        labels: ['Bananas', 'Apples', 'Grapes']
+    }, {
+        donut: true,
+        showLabel: false,
+        donutWidth: 40
+
+    });
+    var chart = new Chartist.Pie('.employee', {
+        series: [60, 30, 30],
+        labels: ['Bananas', 'Apples', 'Grapes']
+    }, {
+        donut: true,
+        showLabel: false,
+        donutWidth: 40
+
+    });
+
+        // ============================================================== 
+    //  chart bar horizontal
+    // ============================================================== 
+
     
-    const departmentData = [
-        { name: 'HR', value: 30 },
-        { name: 'IT', value: 50 },
-        { name: 'Sales', value: 40 },
-        { name: 'Marketing', value: 20 }
-    ];
-
-    const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff7300'];
-
-    const chartWidth = 300;  // Set chart width
-    const chartHeight = 300; // Set chart height
-
-    const svg = d3.select("#department-distribution-chart")
-        .append("svg")
-        .attr("width", chartWidth)  // Set width
-        .attr("height", chartHeight) // Set height
-        .append("g")
-        .attr("transform", `translate(${chartWidth / 2}, ${chartHeight / 2})`); // Center the pie chart
-
-    const radius = Math.min(chartWidth, chartHeight) / 2; // Calculate radius based on width and height
-
-    const pie = d3.pie()
-        .value(d => d.value);
-
-    const arc = d3.arc()
-        .innerRadius(0)
-        .outerRadius(radius);
-
-    const arcs = svg.selectAll(".arc")
-        .data(pie(departmentData))
-        .enter()
-        .append("g")
-        .attr("class", "arc");
-
-    arcs.append("path")
-        .attr("d", arc)
-        .attr("fill", (d, i) => COLORS[i % COLORS.length]);
-
-    arcs.append("text")
-        .attr("transform", d => `translate(${arc.centroid(d)})`)
-        .attr("dy", "0.35em")
-        .attr("text-anchor", "middle")
-        .text(d => `${d.data.name} ${(d.data.value / d3.sum(departmentData, d => d.value) * 100).toFixed(0)}%`);
-});

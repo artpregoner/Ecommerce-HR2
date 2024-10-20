@@ -21,9 +21,19 @@ class AdminController extends Controller
         $tickets = Ticket::with('user')->get();
         return view('admin.helpdesk.tickets', compact('tickets'));
     }
-    public function workforce()
+
+    // workforce analytics
+    public function employeeMetrics()
     {
-        return view('admin.workforce-analytics.workforce');
+        return view('admin.workforce-analytics.employeeMetrics');
+    }
+    public function skillGap()
+    {
+        return view('admin.workforce-analytics.skillGap');
+    }
+    public function turnoverHiring()
+    {
+        return view('admin.workforce-analytics.turnoverHiring');
     }
 
 }

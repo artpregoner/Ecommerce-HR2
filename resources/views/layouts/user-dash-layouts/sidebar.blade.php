@@ -38,9 +38,9 @@
                         <!-- ============================================================== -->
                         <!-- Dashboard --> 
                         <!-- ============================================================== -->
-                        <li class="nav-item ">
-                            <a class="nav-link" href="{{url('user/maindash')}}" aria-expanded="false" ><i class="fas fa-dollar-sign"></i>Claims & Reimbursement<span class="badge badge-success">6</span></a>
-                        </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{url('user/maindash')}}" aria-expanded="false" ><i class="fas fa-dollar-sign"></i>Claims & Reimbursement<span class="badge badge-success">6</span></a>
+                    </li>
                         <!-- ============================================================== -->
                         <!-- Helpdesk -->
                         <!-- ============================================================== -->

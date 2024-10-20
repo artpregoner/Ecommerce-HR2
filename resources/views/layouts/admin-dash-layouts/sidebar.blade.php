@@ -17,6 +17,25 @@
                         <a class="nav-link" href="{{url('admin/maindash')}}" aria-expanded="false" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                     </li>
                         <!-- ============================================================== -->
+                        <!-- Workforce Analytics -->
+                        <!-- ============================================================== -->
+                    <li class="nav-item">
+                        <a class="nav-link " href="#" data-toggle="collapse" data-target="#submenu-1" aria-expanded="false"><i class="fas fa-fw fa-chart-bar" aria-controls="submenu-1"></i>Workforce Analytics</a>
+                        <div id="submenu-1" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('workforce/employee-metrics')}}">Employee Metrics<span class="badge badge-secondary">New</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('workforce/skill-gap')}}">Skill Gap</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('workforce/turnover-hiring')}}">Turnover & Hiring Needs</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                        <!-- ============================================================== -->
                         <!-- Emloyee Self-service -->
                         <!-- ============================================================== -->
                     <li class="nav-item">
@@ -33,12 +52,6 @@
                         </div>
                     </li>
                         <!-- ============================================================== -->
-                        <!-- Workforce Analytics -->
-                        <!-- ============================================================== -->
-                    <li class="nav-item">
-                        <a class="nav-link " href="{{url('workforce')}}" aria-expanded="false"><i class="fas fa-fw fa-chart-bar"></i>Workforce Analytics</a>
-                    </li>
-                        <!-- ============================================================== -->
                         <!-- Employee Engagement -->
                         <!-- ============================================================== -->
                     <li class="nav-item ">
@@ -53,6 +66,9 @@
                                 </li>
                             </ul>
                         </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{url('admin/maindash')}}" aria-expanded="false" ><i class="fas fa-dollar-sign"></i>Claims & Reimbursement<span class="badge badge-success">6</span></a>
                     </li>
 
                         <!-- ============================================================== -->
