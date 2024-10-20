@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     @if(app()->environment('local'))
+        <link rel="stylesheet" href="{{ asset('asset/libs/css/styles.css') }}">
         <link rel="stylesheet" href="{{ asset('template/assets/vendor/charts/chartist-bundle/chartist.css') }}">
         <link rel="stylesheet" href="{{ asset('template/assets/vendor/charts/morris-bundle/morris.css') }}">
         <link rel="stylesheet" href="{{ asset('template/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css') }}">
@@ -18,7 +19,6 @@
         <link rel="stylesheet" href="{{ asset('template/assets/vendor/fonts/fontawesome/css/fontawesome-all.css') }}">
         <link href="{{ asset('template/assets/vendor/full-calendar/css/fullcalendar.print.css') }}" rel='stylesheet' media='print' />
         <link href="{{ asset('template/assets/vendor/full-calendar/css/fullcalendar.css') }}" rel='stylesheet' />
-        <link href="{{ asset('assets/libs/js/styles.css') }}" rel='stylesheet' />
     @endif
     <title>@yield('title')</title>
 </head>
@@ -85,6 +85,8 @@
         <script src="{{ asset('template/assets/vendor/full-calendar/js/fullcalendar.js') }}"></script>
         <script src="{{ asset('template/assets/vendor/full-calendar/js/jquery-ui.min.js') }}"></script>
         <script src="{{ asset('template/assets/vendor/full-calendar/js/calendar.js') }}"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="{{ asset('asset/libs/js/javascript.js') }}"></script>
     @endif
 </body>
  

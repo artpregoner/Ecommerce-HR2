@@ -11,12 +11,12 @@ use Hash;
 class AuthController extends Controller
 {
     // Show login form
-    public function showLoginForm()
-    {
-        //dd(Hash::make('admin12345678'));
-        //dd(Hash::make('user12345678'));
-        return view('Auth.login');
-    }
+    // public function showLoginForm()
+    // {
+    //     //dd(Hash::make('admin12345678'));
+    //     //dd(Hash::make('user12345678'));
+    //     return view('Auth.login');
+    // }
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
