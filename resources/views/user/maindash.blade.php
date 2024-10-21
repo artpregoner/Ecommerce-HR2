@@ -111,7 +111,7 @@
                         <h5 class="text-muted">Total Earned</h5>
                         <h2 class="mb-0"> 50,000</h2>
                     </div>
-                    <div class="float-right icon-circle-medium  icon-box-lg  bg-brand-light mt-1" style="color: #459423;">
+                    <div class="float-right icon-circle-medium  icon-box-lg  bg-success-light mt-1">
                         <i class="fa fa-money-bill-alt fa-fw fa-sm" style="color: #459423;"></i>
                     </div>
                 </div>
