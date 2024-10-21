@@ -14,4 +14,5 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::get('user/helpdesk/{ticket}/edit', [HelpdeskController::class, 'edit'])->name('helpdesk.edit');
     Route::put('user/helpdesk/{ticket}', [HelpdeskController::class, 'update'])->name('helpdesk.update');
     Route::delete('/helpdesk/{ticket}', [HelpdeskController::class, 'destroy'])->name('helpdesk.destroy');
+    Route::get('user/helpdesk/view', [HelpdeskController::class, 'userticketView'])->name('user.helpdesk.view');
 });

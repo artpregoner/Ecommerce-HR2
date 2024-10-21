@@ -1,6 +1,6 @@
 <div class="dashboard-header">
     <nav class="navbar navbar-expand-lg bg-white fixed-top">
-        <img src="../template/assets/images/storelogo.png" alt="" style="width: 100px; padding-left: 10px;">
+        <img src="{{ asset('template\images\storelogo.png') }}" alt="" style="width: 100px; padding-left: 10px;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

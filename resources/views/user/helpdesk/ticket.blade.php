@@ -52,7 +52,7 @@
                                                     <i class="far fa-trash-alt"></i>
                                                 </button>
                                             </form>
-                                            <a href="" class="btn btn-sm btn-outline-light">View</a>
+                                            <a href="{{route('user.helpdesk.view')}}" class="btn btn-sm btn-outline-light">View</a>
                                         </div>
                                     </td>
                                 </tr>

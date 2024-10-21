@@ -41,7 +41,7 @@
                                 <td>{{ $ticket->created_at->format('Y-m-d') }}</td>
                                 <td>
                                     <div class="btn-group ml-auto">
-                                        <a href="{{ route('helpdesk.edit', $ticket->id) }}" class="btn btn-sm btn-outline-light">Reply</a>
+                                        <a href="{{ route('admin.helpdesk.view') }}" class="btn btn-sm btn-outline-light">Reply</a>
                                         <form action="{{ route('admin.helpdesk.destroy', $ticket->id) }}" method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
