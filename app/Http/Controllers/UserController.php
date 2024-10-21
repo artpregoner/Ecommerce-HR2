@@ -24,18 +24,15 @@ class UserController extends Controller
         // Logic for showing employee profile
         return view('user.self-service.schedule');
     }
-
-    public function reimbursement()
+    // user reimbursement requests list
+    public function ReimbursementRequests()
     {
-        // Logic for showing employee profile
-        //return view('user.request_ticket'); // Ensure this view exists
+        return view('user.reimbursement.requests');
     }
 
-    public function helpdesk()
+    public function ReimbursementCreate()
     {
-        // Logic for handling employee requests
-        //return view('user.helpdesk.ticket');
-         // Ensure this view exists
+        return view('user.reimbursement.create');
     }
 }
 

@@ -30,7 +30,7 @@
                                     <a class="nav-link" href="general.html">Leave Management </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('schedule')}}">Schedule </a>
+                                    <a class="nav-link" href="{{url('user/schedule')}}">Schedule </a>
                                 </li>
                             </ul>
                         </div>
@@ -39,7 +39,7 @@
                         <!-- Dashboard --> 
                         <!-- ============================================================== -->
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{url('user/maindash')}}" aria-expanded="false" ><i class="fas fa-dollar-sign"></i>Claims & Reimbursement<span class="badge badge-success">6</span></a>
+                        <a class="nav-link" href="{{url('user/claims&reimbursement/requests')}}" aria-expanded="false" ><i class="fas fa-dollar-sign"></i>Claims & Reimbursement<span class="badge badge-success">6</span></a>
                     </li>
                         <!-- ============================================================== -->
                         <!-- Helpdesk -->

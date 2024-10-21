@@ -43,7 +43,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth', 'user'])->group(function () {
     Route::get('user/maindash', [UserController::class, 'dashboard'])->name('user.maindash');
-    Route::get('schedule', [UserController::class, 'self_service'])->name('user.self-service.schedule');
+    Route::get('user/schedule', [UserController::class, 'self_service'])->name('user.self-service.schedule');
+    // reimbursement
+    Route::get('user/claims&reimbursement/requests', [UserController::class, 'ReimbursementRequests'])->name('reimbursement.requests');
+    Route::get('user/claims&reimbursement/create', [UserController::class, 'ReimbursementCreate'])->name('reimbursement.create');
 });
 
 require __DIR__ . '/adminHelpdesk.php';
