@@ -48,4 +48,9 @@ class AdminController extends Controller
     {
         return view('admin.workforce-analytics.turnoverHiring');
     }
+    // claims & reimbursiment
+    public function adminReimbursement()
+    {
+        return view('admin.reimbursement.requests');
+    }
 }
