@@ -125,5 +125,18 @@ class HelpdeskController extends Controller
 
             return redirect()->route('user.helpdesk.ticket')->with('success', 'Ticket updated successfully.');
         }
+        
+        //     public function adminDestroy(Ticket $ticket)
+        // {
+        //     // Ensure the authenticated user is admin
+        //     if (Auth::user()->role !== 'admin') {
+        //         abort(403, 'Unauthorized action.');
+        //     }
+
+        //     // Delete the ticket
+        //     $ticket->delete();
+
+        //     return redirect()->route('admin.helpdesk.ticket')->with('success', 'Ticket deleted successfully.');
+        // }
 
 }

@@ -10,5 +10,7 @@ use GuzzleHttp\Middleware;
 
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('admin/helpdesk/tickets', [AdminController::class, 'adminTicketList'])->name('admin.tickets');
+    Route::get('admin/helpdesk/tickets', [AdminController::class, 'adminTicketList'])->name('admin.helpdesk.tickets');
+    // Route for the admin to view all tickets
+    Route::delete('admin/helpdesk/{ticket}', [AdminController::class, 'adminDestroy'])->name('admin.helpdesk.destroy');
 });

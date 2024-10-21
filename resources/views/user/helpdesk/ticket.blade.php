@@ -48,7 +48,7 @@
                                             <form action="{{ route('helpdesk.destroy', $ticket->id) }}" method="POST" >
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-outline-light">
+                                                <button type="submit" class="btn btn-sm btn-outline-light" onclick="return confirm('Are you sure you want to delete this ticket?');">
                                                     <i class="far fa-trash-alt"></i>
                                                 </button>
                                             </form>

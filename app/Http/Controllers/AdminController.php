@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Ticket; // Import the Ticket model
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
@@ -21,7 +22,19 @@ class AdminController extends Controller
         $tickets = Ticket::with('user')->get();
         return view('admin.helpdesk.tickets', compact('tickets'));
     }
+    //delete users tickets
+    public function adminDestroy(Ticket $ticket)
+    {
+        // Ensure the authenticated user is admin
+        if (Auth::user()->role !== 'admin') {
+            abort(403, 'Unauthorized action.');
+        }
 
+        // Delete the ticket
+        $ticket->delete();
+
+        return redirect()->route('admin.helpdesk.tickets')->with('success', 'Ticket deleted successfully.');
+    }
     // workforce analytics
     public function employeeMetrics()
     {
@@ -35,5 +48,4 @@ class AdminController extends Controller
     {
         return view('admin.workforce-analytics.turnoverHiring');
     }
-
 }

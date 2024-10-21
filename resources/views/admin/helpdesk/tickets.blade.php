@@ -42,11 +42,12 @@
                                 <td>
                                     <div class="btn-group ml-auto">
                                         <a href="{{ route('helpdesk.edit', $ticket->id) }}" class="btn btn-sm btn-outline-light">Reply</a>
-                                        <form action="{{ route('helpdesk.destroy', $ticket->id) }}" method="POST" style="display:inline;">
+                                        <form action="{{ route('admin.helpdesk.destroy', $ticket->id) }}" method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-outline-light" onclick="return confirm('Are you sure you want to delete this ticket?');">
-                                                <i class="far fa-trash-alt"></i> Delete</button>
+                                                <i class="far fa-trash-alt"></i> Delete
+                                            </button>
                                         </form>
                                     </div>
                                 </td> 
