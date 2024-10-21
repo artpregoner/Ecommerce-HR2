@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="{{ asset('template/assets/vendor/fonts/fontawesome/css/fontawesome-all.css') }}">
         <link href="{{ asset('template/assets/vendor/full-calendar/css/fullcalendar.print.css') }}" rel='stylesheet' media='print' />
         <link href="{{ asset('template/assets/vendor/full-calendar/css/fullcalendar.css') }}" rel='stylesheet' />
+        <link rel="icon" href="{{ asset('template\images\storelogo.png') }}" type="image/x-icon">
         @yield('styles')
     @endif
     <title>@yield('title')</title>
