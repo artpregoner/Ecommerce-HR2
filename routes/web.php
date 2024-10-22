@@ -11,6 +11,7 @@ use GuzzleHttp\Middleware;
 
 // Route para ipakita ang login form (GET request)
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 
 // Route para i-handle ang login submission (POST request)
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
