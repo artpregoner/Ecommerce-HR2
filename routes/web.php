@@ -18,17 +18,6 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 // Logout route
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Root route that checks if the user is already logged in
-// Route::get('/', function () {
-//     if (Auth::check()) {
-//         // Redirect based on user role
-//         if (Auth::user()->role === 'admin') {
-//             return redirect()->route('admin.maindash');
-//         } else {
-//             return redirect()->route('user.maindash');
-//         }
-//     }
-//     return view('auth.login'); // Show login form if not authenticated
-// })->name('login');
 
 // Add your dashboard routes here, protected by authentication middleware:
 Route::middleware('auth')->group(function () {
