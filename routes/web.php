@@ -12,6 +12,9 @@ use GuzzleHttp\Middleware;
 // Login route
 // Root route that checks if the user is already logged in
 Route::get('/', function () {
+    return view('auth.login');
+});
+Route::get('/', function () {
     if (Auth::check()) {
         // Redirect based on user role
         if (Auth::user()->role === 'admin') {
