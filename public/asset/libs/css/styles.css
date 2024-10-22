@@ -236,3 +236,52 @@
 canvas {
     height: 400px; /* Set height according to your needs */
 }
+
+/* text color */
+.man-color {
+    color: #5969ff !important;
+}
+.woman-color {
+    color: #ff407b !important;
+}
+.turnover-color {
+    color: #25d5f2 !important;
+}
+
+.text-brand {
+    color: #ffc750 !important;
+}
+
+
+.text-success {
+    color: #2ec551 !important;
+}
+
+.text-danger {
+    color: #ef172c !important;
+}
+
+.text-warning {
+    bcolor: #ffc108 !important;
+}
+
+
+.text-light {
+    color: #f0f0f8 !important;
+}
+
+.text-dark {
+    color: #3d405c !important;
+}
+
+.text-gray {
+    color: #868aa5 !important;
+}
+
+.text-muted {
+    color: #7171a6 !important;
+}
+
+.rating-color {
+    color: #ffa811;
+}

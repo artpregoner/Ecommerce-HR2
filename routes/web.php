@@ -37,8 +37,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('workforce/employee-metrics', [AdminController::class, 'employeeMetrics'])->name('employeeMetrics');
     Route::get('workforce/skill-gap', [AdminController::class, 'skillGap'])->name('skillGap');
     Route::get('workforce/turnover-hiring', [AdminController::class, 'turnoverHiring'])->name('turnoverHiring');
-    // claims & reimbursement
+    // claims & reimbursement ui only
     Route::get('claims&reimbursement/requests', [AdminController::class, 'adminReimbursement'])->name('admin.reimbursiment.requests');
+    // claims & reimbursement ui only
+    Route::get('self-service/employee-profile', [AdminController::class, 'employeeManagement'])->name('admin.self-service.employeeList');
 });
 
 Route::middleware(['auth', 'user'])->group(function () {

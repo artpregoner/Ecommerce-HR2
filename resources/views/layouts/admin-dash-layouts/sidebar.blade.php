@@ -43,7 +43,7 @@
                         <div id="submenu-2" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Employee Details<span class="badge badge-secondary">New</span></a>
+                                    <a class="nav-link" href="{{url('self-service/employee-profile')}}">Employee Profiles Management<span class="badge badge-secondary">New</span></a>
                                 </li>
                                 {{-- <li class="nav-item">
                                     <a class="nav-link" href="general.html">Request </a>

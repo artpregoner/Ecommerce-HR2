@@ -53,4 +53,9 @@ class AdminController extends Controller
     {
         return view('admin.reimbursement.requests');
     }
+    // Self-service employee management employee lists
+    public function employeeManagement()
+    {
+        return view('admin.self-service.employeeList');
+    }
 }
