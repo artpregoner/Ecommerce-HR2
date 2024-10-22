@@ -10,10 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Middleware;
 
 // Login route
+Route::get('/', [AuthController::class, 'showLoginForm']);
 // Root route that checks if the user is already logged in
-Route::get('/', function () {
-    return view('auth.login');
-});
 Route::get('/', function () {
     if (Auth::check()) {
         // Redirect based on user role

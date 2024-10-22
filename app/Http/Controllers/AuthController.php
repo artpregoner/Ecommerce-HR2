@@ -32,7 +32,7 @@ class AuthController extends Controller
             }
         }
 
-        return redirect()->back()->with('error', "Please enter current Email and Password");
+        return view('auth.login');
     }
 
     public function logout()
