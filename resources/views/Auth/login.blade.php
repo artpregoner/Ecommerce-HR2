@@ -85,7 +85,7 @@
             <div class="card-header text-center"><a href="#"><img src="../template/assets/images/storelogo.png" alt="logo" style="width: 200px"></a><span class="splash-description">Please enter your user information.</span></div>
             <div class="card-body" id="loginForm">
                 @include('components.invalid_information')
-                <form action="{{ route('login.submit') }}" method="post">
+                <form action="{{ route('login.submit') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <input class="form-control form-control-lg" name="email" id="yourEmail" type="email" placeholder="Email" autocomplete="off">
