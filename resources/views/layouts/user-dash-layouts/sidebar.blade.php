@@ -26,9 +26,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Update Information</a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link" href="general.html">Leave Management </a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('user/schedule')}}">Schedule </a>
                                 </li>
