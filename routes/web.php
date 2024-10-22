@@ -9,25 +9,38 @@ use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Middleware;
 
-// Login route
-Route::get('/', [AuthController::class, 'showLoginForm']);
-// Root route that checks if the user is already logged in
-Route::get('/', function () {
-    if (Auth::check()) {
-        // Redirect based on user role
-        if (Auth::user()->role === 'admin') {
-            return redirect()->route('admin.maindash');
-        } else {
-            return redirect()->route('user.maindash');
-        }
-    }
-    return view('auth.login'); // Show login form if not authenticated
-})->name('login');
+// Route para ipakita ang login form (GET request)
+Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
 
-Route::post('/', [AuthController::class, 'login'])->name('login.post');
+// Route para i-handle ang login submission (POST request)
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
-// Logout
+// Logout route
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+// Root route that checks if the user is already logged in
+// Route::get('/', function () {
+//     if (Auth::check()) {
+//         // Redirect based on user role
+//         if (Auth::user()->role === 'admin') {
+//             return redirect()->route('admin.maindash');
+//         } else {
+//             return redirect()->route('user.maindash');
+//         }
+//     }
+//     return view('auth.login'); // Show login form if not authenticated
+// })->name('login');
+
+// Add your dashboard routes here, protected by authentication middleware:
+Route::middleware('auth')->group(function () {
+    Route::get('admin/maindash', function () {
+        return 'Admin Dashboard'; // Your actual admin dashboard view
+    })->name('admin.maindash');
+
+    Route::get('user/maindash', function () {
+        return 'User Dashboard'; // Your actual user dashboard view
+    })->name('user.maindash');
+});
+
 // Register
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register.form');
 Route::post('/register', [RegisterController::class, 'register'])->name('register');

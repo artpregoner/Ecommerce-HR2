@@ -11,12 +11,11 @@ use Hash;
 class AuthController extends Controller
 {
     // Show login form
-    // public function showLoginForm()
-    // {
-    //     //dd(Hash::make('admin12345678'));
-    //     //dd(Hash::make('user12345678'));
-    //     return view('Auth.login');
-    // }
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
@@ -31,10 +30,11 @@ class AuthController extends Controller
                 return redirect()->intended('user/maindash');
             }
         }
-
-        return view('auth.login');
+        // Return back to login page with error message if credentials are wrong
+        return redirect()->back()->with('error', 'Invalid Email or Password');
     }
 
+    // Handle logout
     public function logout()
     {
         Auth::logout();
