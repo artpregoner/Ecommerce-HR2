@@ -9,17 +9,6 @@ use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Middleware;
 
-// Route para ipakita ang login form (GET request)
-Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-
-// Route para i-handle ang login submission (POST request)
-Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
-
-// Logout route
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-// Root route that checks if the user is already logged in
-
 // Add your dashboard routes here, protected by authentication middleware:
 Route::middleware('auth')->group(function () {
     Route::get('admin/maindash', function () {
@@ -57,6 +46,7 @@ Route::middleware(['auth', 'user'])->group(function () {
 
 require __DIR__ . '/adminHelpdesk.php';
 require __DIR__ . '/userHelpdesk.php';
+require __DIR__ . '/loginRoute.php';
 
 
 
