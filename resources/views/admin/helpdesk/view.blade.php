@@ -22,27 +22,27 @@
     <div class="chat-module-top">
         <div class="chat-module-body">
             <div class="media chat-item">
-                <img alt="Admin" src="../assets/images/avatar-2.jpg" class="rounded-circle user-avatar-lg">
+                <img alt="Admin" src="{{ asset('template/assets/images/admin.webp') }}" class="rounded-circle user-avatar-lg">
                 <div class="media-body">
                     <div class="chat-item-title">
                         <span class="chat-item-author">Admin</span>
-                        <span>4 days ago</span>
+                        <span>2 min ago</span>
                     </div>
                     <div class="chat-item-body">
-                        <p>Nice one, Nulla ut diam porttitor odio malesuada malesuada eu at ipsum.</p>
+                        <p>Gagawan na ng paraan.</p>
                     </div>
                 </div>
             </div>
             <hr>
             <div class="media chat-item">
-                <img alt="User" src="../assets/images/avatar-3.jpg" class="rounded-circle user-avatar-lg">
+                <img alt="User" src="{{ asset('template/assets/images/user1.png') }}" class="rounded-circle user-avatar-lg">
                 <div class="media-body">
                     <div class="chat-item-title">
                         <span class="chat-item-author">User</span>
-                        <span>3 days ago</span>
+                        <span>1 min ago</span>
                     </div>
                     <div class="chat-item-body">
-                        <p>Roger that boss! Donec quis ante ut felis tincidunt blandit. 🔥</p>
+                        <p>Salamat po. 🔥</p>
                     </div>
                 </div>
             </div>
