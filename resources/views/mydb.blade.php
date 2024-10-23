@@ -10,4 +10,7 @@
         }
     ?>
     </div>
+    <div>
+        test
+    </div>
 @endsection('content')
