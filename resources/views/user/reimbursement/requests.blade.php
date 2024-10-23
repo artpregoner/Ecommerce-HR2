@@ -13,17 +13,9 @@
 <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
-            <div class="email-inbox-header">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="email-title"><span class="icon"><i class="fas fa-hand-holding-usd"></i></span> Claims & Reimbursement</div>
-                    </div>
-                    <div class="form-group row text-right ml-auto">
-                        <div class="col col-sm-10 col-lg-12 offset-sm-10 offset-lg-5 ml-auto">
-                            <button type="button" class="btn btn-space btn-primary" onclick="window.location.href='{{ route('reimbursement.create') }}'">Request</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="email-title"><span class="icon"><i class="fas fa-hand-holding-usd"></i></span> Claims & Reimbursement</div>
+                <button type="button" class="btn btn-space btn-primary" onclick="window.location.href='{{ route('reimbursement.create') }}'">Request</button>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

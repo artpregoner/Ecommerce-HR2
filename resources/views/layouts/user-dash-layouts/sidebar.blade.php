@@ -38,17 +38,18 @@
                         <!-- ============================================================== -->
                         <!-- Dashboard --> 
                         <!-- ============================================================== -->
+                    <div style="border-top: 1px solid #ddd; margin: 10px 0;"></div>
+                    <li class="nav-divider">Claims & Reimbursement</li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{url('user/claims&reimbursement/requests')}}" aria-expanded="false" ><i class="fas fa-dollar-sign"></i>Claims & Reimbursement<span class="badge badge-success">6</span></a>
+                        <a class="nav-link" href="{{url('user/claims&reimbursement/requests')}}" aria-expanded="false" ><i class="fas fa-dollar-sign"></i>My Request<span class="badge badge-success">6</span></a>
                     </li>
                         <!-- ============================================================== -->
                         <!-- Helpdesk -->
                         <!-- ============================================================== -->
-                    <li class="nav-divider">
-                        Helpdesk
-                    </li>
+                    <div style="border-top: 1px solid #ddd; margin: 10px 0;"></div>
+                    <li class="nav-divider">Helpdesk</li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('user/helpdesk/tickets')}}" aria-expanded="false"><i class="fas fa-fw  fa-envelope"></i>Ticket</a>
+                        <a class="nav-link" href="{{url('user/helpdesk/tickets')}}" aria-expanded="false"><i class="fas fa-fw  fa-envelope"></i>My Ticket</a>
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link" href="{{url('helpdesk/ticket-inbox')}}" aria-expanded="false" ><i class="fas fa-inbox"></i>Inbox <span class="badge badge-secondary">New</span></a>

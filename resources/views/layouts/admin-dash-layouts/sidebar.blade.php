@@ -67,19 +67,23 @@
                             </ul>
                         </div>
                     </li>
+                    <div style="border-top: 1px solid #ddd; margin: 10px 0;"></div>
+                    <li class="nav-divider">
+                        Claims & Reimbursement
+                    </li>
                     <li class="nav-item ">
                         <a class="nav-link" href="{{url('claims&reimbursement/requests')}}" aria-expanded="false" ><i class="fas fa-dollar-sign"></i>Claims & Reimbursement<span class="badge badge-success">6</span></a>
                     </li>
-
+                    <div style="border-top: 1px solid #ddd; margin: 10px 0;"></div>
                         <!-- ============================================================== -->
                         <!-- Helpdesk -->
                         <!-- ============================================================== -->
                     <li class="nav-divider">
                         Helpdesk
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="{{url('admin/helpdesk/tickets')}}" aria-expanded="false"><i class="fas fa-fw  fa-envelope"></i>Ticket</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('admin/helpdesk/tickets')}}" aria-expanded="false" ><i class="fas fa-inbox"></i>Inbox <span class="badge badge-secondary">New</span></a>
                     </li>

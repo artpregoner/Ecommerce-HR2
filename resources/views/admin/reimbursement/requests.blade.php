@@ -13,12 +13,8 @@
 <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
-            <div class="email-inbox-header">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="email-title"><span class="icon"><i class="fas fa-hand-holding-usd"></i></span> Claims & Reimbursement <span class="new-messages">(1 new request)</span> </div>
-                    </div>
-                </div>
+            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="email-title"><span class="icon"><i class="fas fa-hand-holding-usd"></i></span> Claims & Reimbursement <span class="new-messages">(1 new request)</span> </div>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

@@ -13,17 +13,9 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <div class="email-inbox-header">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="email-title"><span class="icon"><i class="fas fa-inbox"></i></span> My tickets <span class="new-messages">({{ $totalTickets }})</span> </div>
-                        </div>
-                        <div class="form-group row text-right ml-auto">
-                            <div class="col col-sm-10 col-lg-12 offset-sm-10 offset-lg-5 ml-auto">
-                                <a href="{{ route('helpdesk.create') }}" class="btn btn-space btn-primary">New Ticket</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="email-title"><span class="icon"><i class="fas fa-inbox"></i></span> My tickets <span class="new-messages">({{ $totalTickets }})</span> </div>
+                    <button type="button" class="btn btn-space btn-primary" onclick="window.location.href='{{ route('helpdesk.create') }}'">New Ticket</button>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
