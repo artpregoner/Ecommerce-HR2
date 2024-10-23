@@ -1,13 +1,13 @@
 @extends('layouts.app')
-@section('title')Helpdesk - Create Ticket @endsection
-@section('header')Helpdesk @endsection <!--pageheader-->
-@section('active-header')Create Ticket @endsection <!--active pageheader-->
+@section('title','Helpdesk - Create Ticket')
+@section('header','Helpdesk')<!--pageheader-->
+@section('active-header', 'Submit new Ticket')<!--active pageheader-->
 
 @section('content')
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Create Ticket</h5>
+                <h5 class="card-header">Submit new Ticket</h5>
                 <div class="card-body">
                     <form action="{{ route('helpdesk.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -22,16 +22,14 @@
                         <div class="form-group">
                             <label for="department">Department</label>
                             <select class="form-control" id="department" name="department" required>
-                                <option>Admin</option>
+                                <option>Marketing</option>
+                                <option>Sales</option>
+                                <option>Customer Service</option>
+                                <option>Logistics</option>
+                                <option>Product Management</option>
+                                <option>Human Resources (HR)</option>
                                 <option>Finance</option>
-                                <option>Core 1</option>
-                                <option>Core 2</option>
-                                <option>Core 3</option>
-                                <option>LOGISTIC 1</option>
-                                <option>LOGISTIC 2</option>
-                                <option>HR 1</option>
-                                <option>HR 2</option>
-                                <option>HR 3</option>
+                                <option>Accounting</option>
                                 <!-- Add more options here -->
                             </select>
                         </div>

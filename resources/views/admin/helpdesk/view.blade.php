@@ -6,16 +6,14 @@
 @section('content')
 <div class="chat-module">
     <div class="row">
-        <div class="col-lg-6">
-            <div class="email-title">
-                <span class="icon"><i class="fas fa-inbox"></i></span> Ticket details
-            </div>
-        </div>
-        <div class="form-group row text-right ml-auto">
-            <div class="col col-sm-10 col-lg-12 offset-sm-10 offset-lg-5 ml-auto">
-                <button type="button" class="btn btn-space btn-primary" onclick="window.history.back();">
-                    Return to Ticket Lists
-                </button>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="email-title"><span class="icon"><i class="fas fa-inbox"></i></span> Ticket Reply </div>
+                    <button type="button" class="btn btn-space btn-primary" onclick="window.history.back();">
+                        Return to Ticket Lists
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -52,7 +50,7 @@
         <div class="col-md-12 p-0">
             <div class="form-group">
                 <label class="control-label sr-only" for="summernote">Descriptions</label>
-                <textarea class="form-control" id="summernote" name="editordata" rows="6" placeholder="Write Descriptions"></textarea>
+                <textarea class="form-control" id="summernote" name="editordata" rows="6" placeholder="Write your reply!"></textarea>
             </div>
         </div>
         <div class="email action-send">

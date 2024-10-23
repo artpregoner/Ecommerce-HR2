@@ -1,12 +1,22 @@
 @extends('layouts.app')
-@section('title')Helpdesk - Reply @endsection
-@section('header')Helpdesk @endsection <!--pageheader-->
-@section('active-header')View Reply @endsection <!--active pageheader-->
+@section('title','Helpdesk - Reply')
+@section('header','Helpdesk') <!--pageheader-->
+@section('active-header', 'View Reply') <!--active pageheader-->
 
 @section('content')
 <div class="chat-module">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="email-title"><span class="icon"><i class="fas fa-inbox"></i></span> Ticket Reply </div>
+                    <button type="button" class="btn btn-space btn-primary" onclick="window.history.back();">
+                        Return to Ticket Lists
+                    </button>
+                </div>
+            </div>
+        </div>
+        {{-- <div class="col-lg-6">
             <div class="email-title">
                 <span class="icon"><i class="fas fa-inbox"></i></span> Ticket details
             </div>
@@ -17,32 +27,32 @@
                     Return to Ticket Lists
                 </button>
             </div>
-        </div>
+        </div> --}}
     </div>
     <div class="chat-module-top">
         <div class="chat-module-body">
             <div class="media chat-item">
-                <img alt="Admin" src="../assets/images/avatar-2.jpg" class="rounded-circle user-avatar-lg">
+                <img alt="Admin" src="{{ asset('template/assets/images/admin.webp') }}" class="rounded-circle user-avatar-lg">
                 <div class="media-body">
                     <div class="chat-item-title">
                         <span class="chat-item-author">Admin</span>
-                        <span>4 days ago</span>
+                        <span>2 min ago</span>
                     </div>
                     <div class="chat-item-body">
-                        <p>Nice one, Nulla ut diam porttitor odio malesuada malesuada eu at ipsum.</p>
+                        <p>Gagawan na ng paraan.</p>
                     </div>
                 </div>
             </div>
             <hr>
             <div class="media chat-item">
-                <img alt="User" src="../assets/images/avatar-3.jpg" class="rounded-circle user-avatar-lg">
+                <img alt="User" src="{{ asset('template/assets/images/user1.png') }}" class="rounded-circle user-avatar-lg">
                 <div class="media-body">
                     <div class="chat-item-title">
                         <span class="chat-item-author">User</span>
-                        <span>3 days ago</span>
+                        <span>1 min ago</span>
                     </div>
                     <div class="chat-item-body">
-                        <p>Roger that boss! Donec quis ante ut felis tincidunt blandit. 🔥</p>
+                        <p>Salamat po. 🔥</p>
                     </div>
                 </div>
             </div>
@@ -52,7 +62,7 @@
         <div class="col-md-12 p-0">
             <div class="form-group">
                 <label class="control-label sr-only" for="summernote">Descriptions</label>
-                <textarea class="form-control" id="summernote" name="editordata" rows="6" placeholder="Write Descriptions"></textarea>
+                <textarea class="form-control" id="summernote" name="editordata" rows="6" placeholder="Write your reply!"></textarea>
             </div>
         </div>
         <div class="email action-send">

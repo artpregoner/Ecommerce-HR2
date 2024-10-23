@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@section('title')Helpdesk - My Tickets @endsection
-@section('header')Helpdesk @endsection <!--pageheader-->
-@section('active-header')My Tickets @endsection <!--active pageheader-->
+@section('title', 'Helpdesk - My Tickets')
+@section('header', 'Helpdesk')<!--pageheader-->
+@section('active-header', 'My Tickets') <!--active pageheader-->
 @section('styles')
         <link rel="stylesheet" type="text/css" href="{{ asset('template/assets/vendor/datatables/css/dataTables.bootstrap4.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('template/assets/vendor/datatables/css/buttons.bootstrap4.css') }}">
@@ -14,8 +14,8 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
                 <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
-                    <div class="email-title"><span class="icon"><i class="fas fa-inbox"></i></span> My tickets <span class="new-messages">({{ $totalTickets }})</span> </div>
-                    <button type="button" class="btn btn-space btn-primary" onclick="window.location.href='{{ route('helpdesk.create') }}'">New Ticket</button>
+                    <div class="email-title"><span class="icon"><i class="fas fa-inbox"></i></span> My tickets <span class="new-messages">({{ $totalTickets }} all tickets)</span> </div>
+                    <button type="button" class="btn btn-space btn-primary" onclick="window.location.href='{{ route('helpdesk.create') }}'">Submit new Ticket</button>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
