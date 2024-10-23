@@ -24,10 +24,10 @@
                         <div id="submenu-1" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('workforce/employee-metrics')}}">Employee Metrics<span class="badge badge-secondary">New</span></a>
+                                    <a class="nav-link" href="{{url('workforce/skill-gap')}}">Skill Analysis Tool</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('workforce/skill-gap')}}">Skill Gap</a>
+                                    <a class="nav-link" href="{{url('workforce/employee-metrics')}}">Employee Metrics<span class="badge badge-secondary">New</span></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('workforce/turnover-hiring')}}">Turnover & Hiring Needs</a>
