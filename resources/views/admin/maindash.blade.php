@@ -102,7 +102,7 @@
         </div>
         <div class="col-xl-3 col-lg-12 col-md-6 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header"><i class=" fas fa-user-circle fas fa-headphones" title="us" id="us"></i> Helpdesk</h5>
+                <h5 class="card-header"><i class="fas fa-headphones" title="us" id="us"></i> Helpdesk</h5>
                 <div class="card-body p-0">
                     <ul class="country-sales list-group list-group-flush">
                         <li class="country-sales-content list-group-item">

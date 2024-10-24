@@ -63,7 +63,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="pills-packages-tab" data-toggle="pill" href="#pills-packages"
-                                role="tab" aria-controls="pills-packages" aria-selected="false">Not Available</a>
+                                role="tab" aria-controls="pills-packages" aria-selected="false">Overall</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab"
@@ -159,14 +159,80 @@
                                 <!-- ============================================================== -->
                                 <!-- end total earned   -->
                                 <!-- ============================================================== -->
+                                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="card">
+                                        <h5 class="card-header"><i class="m-r-10 mdi mdi-account-settings-variant" style="font-size: 30px;"></i></i> Self-Service</h5>
+                                        <div class="card-body p-0">
+                                            <ul class="country-sales list-group list-group-flush">
+                                                <li class="country-sales-content list-group-item">
+                                                    <span class="">Update Personal Info</span><span class="float-right text-dark"><a href="#" class="btn btn-info active">Update</a></span>
+                                                </li>
+                                                <li class="list-group-item country-sales-content">
+                                                    <span class="">Download Payslip</span><span class="float-right text-dark"><a href="#" class="btn btn-info active">View</a></span>
+                                                </li>
+                                                <li class="list-group-item country-sales-content">
+                                                    <span class="">Request Documents</span><span class="float-right text-dark"><a href="#" class="btn btn-info active">Request</a></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="pills-packages" role="tabpanel"
-                            aria-labelledby="pills-packages-tab">
+                        <div class="tab-pane fade" id="pills-packages" role="tabpanel" aria-labelledby="pills-packages-tab">
                             <div class="row">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <div class="section-block">
-                                        <h2 class="section-title">Not Available</h2>
+                                <div class="col-xl-3 col-lg-12 col-md-6 col-sm-12 col-12">
+                                    <div class="card">
+                                        <h5 class="card-header"><i class="m-r-10 mdi mdi-account-settings-variant" style="font-size: 20px;" title="us" id="us"></i> Self-service</h5>
+                                        <div class="card-body p-0">
+                                            <ul class="country-sales list-group list-group-flush">
+                                                <li class="country-sales-content list-group-item">
+                                                    <span class="">Pending Leave Requests</span><span class="float-right text-dark">7</span>
+                                                </li>
+                                                <li class="list-group-item country-sales-content">
+                                                    <span class="">Schedule Changes</span><span class="float-right text-dark">7</span>
+                                                </li>
+                                                <li class="list-group-item country-sales-content">
+                                                    <span class="">Document Requests</span><span class="float-right text-dark">4</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-12 col-md-6 col-sm-12 col-12">
+                                    <div class="card">
+                                        <h5 class="card-header"><i class="fas fa-headphones" title="us" id="us"></i> Helpdesk</h5>
+                                        <div class="card-body p-0">
+                                            <ul class="country-sales list-group list-group-flush">
+                                                <li class="country-sales-content list-group-item">
+                                                    <span class="">Open Tickets</span><span class="float-right text-dark">3</span>
+                                                </li>
+                                                <li class="list-group-item country-sales-content">
+                                                    <span class="">Resolved Today</span><span class="float-right text-dark">12</span>
+                                                </li>
+                                                <li class="list-group-item country-sales-content">
+                                                    <span class="">.</span><span class="float-right text-dark">.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-12 col-md-6 col-sm-12 col-12">
+                                    <div class="card">
+                                        <h5 class="card-header"><i class="fas fa-fw fas fa-hand-holding-usd" title="us" id="us"></i> Claims</h5>
+                                        <div class="card-body p-0">
+                                            <ul class="country-sales list-group list-group-flush">
+                                                <li class="country-sales-content list-group-item">
+                                                    <span class="">Pending Claims</span><span class="float-right text-dark">3</span>
+                                                </li>
+                                                <li class="list-group-item country-sales-content">
+                                                    <span class="">Processed Today</span><span class="float-right text-dark">7</span>
+                                                </li>
+                                                <li class="list-group-item country-sales-content">
+                                                    <span class="">My total spend</span><span class="float-right text-dark">₱700</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
