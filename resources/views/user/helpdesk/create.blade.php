@@ -22,15 +22,12 @@
                         <div class="form-group">
                             <label for="department">Department</label>
                             <select class="form-control" id="department" name="department" required>
-                                <option>Marketing</option>
-                                <option>Sales</option>
-                                <option>Customer Service</option>
-                                <option>Logistics</option>
-                                <option>Product Management</option>
-                                <option>Human Resources (HR)</option>
-                                <option>Finance</option>
-                                <option>Accounting</option>
-                                <!-- Add more options here -->
+                                <option value="">Select Department</option>
+                                <option value="Recruitment">Recruitment</option>
+                                <option value="Training">Training and Development</option>
+                                <option value="Compensation">Compensation and Benefits</option>
+                                <option value="EmployeeRelations">Employee Relations</option>
+                                <option value="OrganizationalDevelopment">Organizational Development</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -45,13 +42,31 @@
                         <div class="form-group">
                             <label for="category">Category</label>
                             <select class="form-control" id="category" name="category" required>
-                                <option>Admin</option>
-                                <option>Finance</option>
-                                <option>Software Issue</option>
-                                <option>Hardware Issue</option>
-                                <option>Network Problem</option>
-                                <option>HR Query</option>
-                                <!-- Add more options here -->
+                                <option value="">Select Category</option>
+                                <!-- Recruitment Categories -->
+                                <option class="Recruitment" value="Hiring Process">Hiring Process</option>
+                                <option class="Recruitment" value="Onboarding">Onboarding</option>
+                                <option class="Recruitment" value="NewHire">New Hire Orientation</option>
+                                
+                                <!-- Training Categories -->
+                                <option class="Training" value="Leadership Development">Leadership Development</option>
+                                <option class="Training" value="Professional Development">Professional Development</option>
+                                <option class="Training" value="Training Request">Training Request</option>
+                                
+                                <!-- Compensation Categories -->
+                                <option class="Compensation" value="Benefits Inquiry">Benefits Inquiry</option>
+                                <option class="Compensation" value="Compensation Review">Compensation Review</option>
+                                <option class="Compensation" value="Payroll Discrepancy">Payroll Discrepancy</option>
+                                
+                                <!-- Employee Relations Categories -->
+                                <option class="EmployeeRelations" value="Conflict Resolution">Conflict Resolution</option>
+                                <option class="EmployeeRelations" value="Employee Complaints">Employee Complaints</option>
+                                <option class="EmployeeRelations" value="Workplace Issues">Workplace Issues</option>
+                                
+                                <!-- Organizational Development Categories -->
+                                <option class="OrganizationalDevelopment" value="Organizational Change">Organizational Change</option>
+                                <option class="OrganizationalDevelopment" value="Restructuring">Restructuring</option>
+                                <option class="OrganizationalDevelopment" value="Cultural Transformation">Cultural Transformation</option>
                             </select>
                         </div>
                         <div class="custom-file mb-3">
@@ -70,4 +85,28 @@
         </div>
     </div>
 @endsection
+@section('scripts')
+<script>
+    document.getElementById('department').addEventListener('change', function() {
+        // Kunin ang napiling department
+        var selectedDepartment = this.value;
+        
+        // Kunin ang lahat ng options sa category
+        var categoryOptions = document.querySelectorAll('#category option');
 
+        // I-loop ang mga options at itago o ipakita batay sa napiling department
+        categoryOptions.forEach(function(option) {
+            if (option.value === "") {
+                option.style.display = "block"; // Palaging ipakita ang "Select Category"
+            } else if (option.classList.contains(selectedDepartment)) {
+                option.style.display = "block"; // Ipakita ang option kung ito ay kasama sa napiling department
+            } else {
+                option.style.display = "none"; // Itago ang option kung hindi ito kasama
+            }
+        });
+
+        // I-reset ang category dropdown kung kinakailangan
+        document.getElementById('category').value = ""; // I-reset ang category
+    });
+</script>
+@endsection

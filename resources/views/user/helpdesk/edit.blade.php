@@ -23,17 +23,12 @@
                     <div class="form-group">
                         <label for="department">Department</label>
                         <select class="form-control" id="department" name="department" required>
-                            <option {{ $ticket->department == 'Admin' ? 'selected' : '' }}>Admin</option>
-                            <option {{ $ticket->department == 'Finance' ? 'selected' : '' }}>Finance</option>
-                            <option {{ $ticket->department == 'Core 1' ? 'selected' : '' }}>Core 1</option>
-                            <option {{ $ticket->department == 'Core 2' ? 'selected' : '' }}>Core 2</option>
-                            <option {{ $ticket->department == 'Core 3' ? 'selected' : '' }}>Core 3</option>
-                            <option {{ $ticket->department == 'LOGISTIC 1' ? 'selected' : '' }}>LOGISTIC 1</option>
-                            <option {{ $ticket->department == 'LOGISTIC 2' ? 'selected' : '' }}>LOGISTIC 2</option>
-                            <option {{ $ticket->department == 'HR 1' ? 'selected' : '' }}>HR 1</option>
-                            <option {{ $ticket->department == 'HR 2' ? 'selected' : '' }}>HR 2</option>
-                            <option {{ $ticket->department == 'HR 3' ? 'selected' : '' }}>HR 3</option>
-                            <!-- Add more options here -->
+                            <option value="" {{ $ticket->department == '' ? 'selected' : '' }}>Select Department</option>
+                            <option value="Recruitment" {{ $ticket->department == 'Recruitment' ? 'selected' : '' }}>Recruitment</option>
+                            <option value="Training" {{ $ticket->department == 'Training' ? 'selected' : '' }}>Training and Development</option>
+                            <option value="Compensation" {{ $ticket->department == 'Compensation' ? 'selected' : '' }}>Compensation and Benefits</option>
+                            <option value="EmployeeRelations" {{ $ticket->department == 'EmployeeRelations' ? 'selected' : '' }}>Employee Relations</option>
+                            <option value="OrganizationalDevelopment" {{ $ticket->department == 'OrganizationalDevelopment' ? 'selected' : '' }}>Organizational Development</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -48,13 +43,32 @@
                     <div class="form-group">
                         <label for="category">Category</label>
                         <select class="form-control" id="category" name="category" required>
-                            <option {{ $ticket->category == 'Admin' ? 'selected' : '' }}>Admin</option>
-                            <option {{ $ticket->category == 'Finance' ? 'selected' : '' }}>Finance</option>
-                            <option {{ $ticket->category == 'Software Issue' ? 'selected' : '' }}>Software Issue</option>
-                            <option {{ $ticket->category == 'Hardware Issue' ? 'selected' : '' }}>Hardware Issue</option>
-                            <option {{ $ticket->category == 'Network Problem' ? 'selected' : '' }}>Network Problem</option>
-                            <option {{ $ticket->category == 'HR Query' ? 'selected' : '' }}>HR Query</option>
-                            <!-- Add more options here -->
+                            <option value="" {{ $ticket->category == '' ? 'selected' : '' }}>Select Category</option>
+                            
+                            <!-- Recruitment Categories -->
+                            <option class="Recruitment" value="Hiring Process" {{ $ticket->category == 'Hiring Process' ? 'selected' : '' }}>Hiring Process</option>
+                            <option class="Recruitment" value="Onboarding" {{ $ticket->category == 'Onboarding' ? 'selected' : '' }}>Onboarding</option>
+                            <option class="Recruitment" value="NewHire" {{ $ticket->category == 'NewHire' ? 'selected' : '' }}>New Hire Orientation</option>
+                            
+                            <!-- Training Categories -->
+                            <option class="Training" value="Leadership Development" {{ $ticket->category == 'Leadership Development' ? 'selected' : '' }}>Leadership Development</option>
+                            <option class="Training" value="Professional Development" {{ $ticket->category == 'Professional Development' ? 'selected' : '' }}>Professional Development</option>
+                            <option class="Training" value="Training Request" {{ $ticket->category == 'Training Request' ? 'selected' : '' }}>Training Request</option>
+                            
+                            <!-- Compensation Categories -->
+                            <option class="Compensation" value="Benefits Inquiry" {{ $ticket->category == 'Benefits Inquiry' ? 'selected' : '' }}>Benefits Inquiry</option>
+                            <option class="Compensation" value="Compensation Review" {{ $ticket->category == 'Compensation Review' ? 'selected' : '' }}>Compensation Review</option>
+                            <option class="Compensation" value="Payroll Discrepancy" {{ $ticket->category == 'Payroll Discrepancy' ? 'selected' : '' }}>Payroll Discrepancy</option>
+                            
+                            <!-- Employee Relations Categories -->
+                            <option class="EmployeeRelations" value="Conflict Resolution" {{ $ticket->category == 'Conflict Resolution' ? 'selected' : '' }}>Conflict Resolution</option>
+                            <option class="EmployeeRelations" value="Employee Complaints" {{ $ticket->category == 'Employee Complaints' ? 'selected' : '' }}>Employee Complaints</option>
+                            <option class="EmployeeRelations" value="Workplace Issues" {{ $ticket->category == 'Workplace Issues' ? 'selected' : '' }}>Workplace Issues</option>
+                            
+                            <!-- Organizational Development Categories -->
+                            <option class="OrganizationalDevelopment" value="Organizational Change" {{ $ticket->category == 'Organizational Change' ? 'selected' : '' }}>Organizational Change</option>
+                            <option class="OrganizationalDevelopment" value="Restructuring" {{ $ticket->category == 'Restructuring' ? 'selected' : '' }}>Restructuring</option>
+                            <option class="OrganizationalDevelopment" value="Cultural Transformation" {{ $ticket->category == 'Cultural Transformation' ? 'selected' : '' }}>Cultural Transformation</option>
                         </select>
                     </div>
                     <div class="custom-file mb-3">
@@ -72,4 +86,29 @@
         </div>
     </div>
 </div>
+@endsection
+@section('scripts')
+<script>
+    document.getElementById('department').addEventListener('change', function() {
+        // Kunin ang napiling department
+        var selectedDepartment = this.value;
+        
+        // Kunin ang lahat ng options sa category
+        var categoryOptions = document.querySelectorAll('#category option');
+
+        // I-loop ang mga options at itago o ipakita batay sa napiling department
+        categoryOptions.forEach(function(option) {
+            if (option.value === "") {
+                option.style.display = "block"; // Palaging ipakita ang "Select Category"
+            } else if (option.classList.contains(selectedDepartment)) {
+                option.style.display = "block"; // Ipakita ang option kung ito ay kasama sa napiling department
+            } else {
+                option.style.display = "none"; // Itago ang option kung hindi ito kasama
+            }
+        });
+
+        // I-reset ang category dropdown kung kinakailangan
+        document.getElementById('category').value = ""; // I-reset ang category
+    });
+</script>
 @endsection
