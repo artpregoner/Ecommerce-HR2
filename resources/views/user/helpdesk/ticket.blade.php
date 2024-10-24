@@ -50,7 +50,7 @@
                                                     <i class="far fa-trash-alt"></i>
                                                 </button>
                                             </form>
-                                            <a href="{{route('user.helpdesk.view')}}" class="btn btn-sm btn-outline-light">View</a>
+                                            <a href="{{ route('user.helpdesk.show', $ticket->id) }}" class="btn btn-sm btn-outline-light">Reply</a>
                                         </div>
                                     </td>
                                 </tr>

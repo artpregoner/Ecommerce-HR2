@@ -1,9 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\HelpdeskController;
+use App\Http\Controllers\User\UserController;
 use GuzzleHttp\Middleware;
 
 
@@ -15,4 +13,12 @@ Route::middleware(['auth', 'user'])->group(function () {
     Route::put('user/helpdesk/{ticket}', [HelpdeskController::class, 'update'])->name('helpdesk.update');
     Route::delete('/helpdesk/{ticket}', [HelpdeskController::class, 'destroy'])->name('helpdesk.destroy');
     Route::get('user/helpdesk/view', [HelpdeskController::class, 'userticketView'])->name('user.helpdesk.view');
+
+    Route::get('/user/helpdesk/{ticket}', [UserController::class, 'show'])->name('user.helpdesk.show');
+    Route::get('/user/helpdesk/{ticket}/replies', [UserController::class, 'fetchReplies'])->name('user.helpdesk.replies');
+    Route::post('/user/helpdesk/{ticketId}/reply', [UserController::class, 'store'])->name('ticket.reply.store');
+
+
+
+
 });

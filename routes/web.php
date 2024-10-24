@@ -1,12 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\HelpdeskController;
 use App\Http\Controllers\RegisterController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\User\UserController;
 use GuzzleHttp\Middleware;
 
 // Add your dashboard routes here, protected by authentication middleware:
