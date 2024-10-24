@@ -2,11 +2,11 @@ var chart = c3.generate({
     bindto: "#department-category",
     data: {
         columns: [
-            ['Logistic', 4],
-            ['HR', 4],
-            ['ADMIN', 10],
-            ['Finance', 10],
-            ['Employee', 30],
+            ['Recruitment', 4],
+            ['Training and Development', 4],
+            ['Compensation and Benefits', 10],
+            ['Employee Relations', 10],
+            ['Organizational Development', 30],
 
         ],
         type: 'donut',
