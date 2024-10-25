@@ -24,13 +24,13 @@
                         <div id="submenu-2" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Update Information</a>
+                                    <a class="nav-link" href="#">Request Leave</a>
                                 </li>
                                 {{-- <li class="nav-item">
                                     <a class="nav-link" href="general.html">Leave Management </a>
                                 </li> --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('user/schedule')}}">Schedule </a>
+                                    <a class="nav-link" href="{{url('user/schedule')}}">My Schedule </a>
                                 </li>
                             </ul>
                         </div>
