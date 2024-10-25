@@ -24,7 +24,7 @@
                         <div id="submenu-2" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Request Leave</a>
+                                    <a class="nav-link" href="{{url('user/employee-selfservice/leave-request')}}">Request Leave</a>
                                 </li>
                                 {{-- <li class="nav-item">
                                     <a class="nav-link" href="general.html">Leave Management </a>

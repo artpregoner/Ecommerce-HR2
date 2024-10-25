@@ -46,8 +46,9 @@ Route::middleware(['auth', 'user'])->group(function () {
 require __DIR__ . '/adminHelpdesk.php';
 require __DIR__ . '/userHelpdesk.php';
 require __DIR__ . '/loginRoute.php';
-//for user account setting
+//for employee (user)
 require __DIR__.'/user/settings/account.php';
+require __DIR__.'/user/selfservice/selfservice.php';
 require __DIR__.'/admin/settings/account.php';
 
 
