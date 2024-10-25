@@ -49,6 +49,10 @@ require __DIR__ . '/loginRoute.php';
 //for employee (user)
 require __DIR__.'/user/settings/account.php';
 require __DIR__.'/user/selfservice/selfservice.php';
+
+
+//for hrmanager/admin
+require __DIR__.'/admin/selfservice/selfservice.php';
 require __DIR__.'/admin/settings/account.php';
 
 

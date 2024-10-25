@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AccountSettingsController extends Controller
 {
-    public function show()
+    public function adminAccountSettings()
     {
         return view('admin.settings.account');
     }

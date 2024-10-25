@@ -45,9 +45,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('self-service/employee-profile')}}">Employee Profiles Management<span class="badge badge-secondary">New</span></a>
                                 </li>
-                                {{-- <li class="nav-item">
-                                    <a class="nav-link" href="general.html">Request </a>
-                                </li> --}}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('employee-selfservice/leave-requests')}}">Employee Leave Applications</a>
+                                </li>
                             </ul>
                         </div>
                     </li>

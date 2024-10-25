@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\Settings\AccountSettingsController;
 // Routes para sa account settings ng user
 Route::middleware(['auth', 'admin'])->group(function () {
     // Route para ipakita ang account settings
-    Route::get('admin/account/settings', [AccountSettingsController::class, 'show'])->name('admin.account.settings');
+    Route::get('admin/account/settings', [AccountSettingsController::class, 'adminAccountSettings'])->name('admin.account.settings');
 
     // // Route para i-update ang account information
     // Route::post('account/settings/update', [AccountSettingsController::class, 'update'])->name('user.account.settings.update');
