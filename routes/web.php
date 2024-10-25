@@ -5,6 +5,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\User\UserController;
 use GuzzleHttp\Middleware;
+Route::get('/dashboard', [RegisterController::class, 'bawal'])->name('authenticated');
+Route::get('/index', [RegisterController::class, 'bawal'])->name('authenticated');
 
 // Add your dashboard routes here, protected by authentication middleware:
 Route::middleware('auth')->group(function () {
