@@ -165,7 +165,7 @@
                                         <div class="card-body p-0">
                                             <ul class="country-sales list-group list-group-flush">
                                                 <li class="country-sales-content list-group-item">
-                                                    <span class="">Update Personal Info</span><span class="float-right text-dark"><a href="#" class="btn btn-info active">Update</a></span>
+                                                    <span class="">Update Personal Info</span><span class="float-right text-dark"><a href="{{ route('user.account.settings') }}" class="btn btn-info active">Update</a></span>
                                                 </li>
                                                 <li class="list-group-item country-sales-content">
                                                     <span class="">Download Payslip</span><span class="float-right text-dark"><a href="#" class="btn btn-info active">View</a></span>
