@@ -11,10 +11,6 @@ class RegisterController extends Controller
     {
         return view('auth.register');
     }
-    public function bawal()
-    {
-        return view('authenticated');
-    }
 
     public function register(Request $request)
     {
