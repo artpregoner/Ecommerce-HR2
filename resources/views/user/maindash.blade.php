@@ -67,11 +67,11 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab"
-                                aria-controls="pills-review" aria-selected="false">Not Available</a>
+                                aria-controls="pills-review" aria-selected="false">My Recognitions</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="pills-msg-tab" data-toggle="pill" href="#pills-msg" role="tab"
-                                aria-controls="pills-msg" aria-selected="false">Not Available</a>
+                                aria-controls="pills-msg" aria-selected="false">Employee Feedback</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
@@ -239,9 +239,39 @@
                         </div>
                         <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
                             <div class="row">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="col-xl-12 col-lg- col-md-7 col-sm-12 col-12">
                                     <div class="section-block">
-                                        <h2 class="section-title">Not Available</h2>
+                                        <div class="col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12">
+                                            <div class="card">
+                                                <h5 class="card-header">My Recognitions</h5>
+                                                <div class="card-body">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Award Type</th>
+                                                                <th scope="col">From</th>
+                                                                <th scope="col">Points</th>
+                                                                <th scope="col">Date</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Performance Award</td>
+                                                                <td>HR Manager</td>
+                                                                <td>100</td>
+                                                                <td>2024-10-24</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Team Player Award</td>
+                                                                <td>Project Manager</td>
+                                                                <td>50</td>
+                                                                <td>2024-10-20</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>                                        
                                     </div>
                                 </div>
                             </div>
@@ -250,11 +280,21 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div class="section-block">
-                                        <h2 class="section-title">Not Available</h2>
+                                        <div class="card">
+                                            <h5 class="card-header"><i class="fab fa-rocketchat" style="font-size: 20px;" title="us" id="us"></i> Employee Feedback</h5>
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="employeeFeedbackTextarea">Employee Feedback</label>
+                                                        <textarea class="form-control" id="employeeFeedbackTextarea" rows="3" placeholder="Share your thoughts, suggestions, or concerns..."></textarea>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
             </div>
