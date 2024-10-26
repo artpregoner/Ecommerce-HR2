@@ -22,3 +22,6 @@ class TicketReplyController extends Controller
     }
 
 }
+//ito ata ang tama, pero hindi ko muna babaguhin.
+//'user_id' => Auth::id(),
+//use Illuminate\Support\Facades\Auth;
