@@ -59,7 +59,7 @@
                         <div id="submenu-4" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="form-elements.html">Recognition and Rewards Programs</a>
+                                    <a class="nav-link" href="{{route('admin.employee-engagement.recognition')}}">Recognition and Rewards Programs</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="form-validation.html">Engagement Metrics Overview</a>

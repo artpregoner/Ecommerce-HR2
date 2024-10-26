@@ -31,6 +31,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('claims&reimbursement/requests', [AdminController::class, 'adminReimbursement'])->name('admin.reimbursiment.requests');
     // claims & reimbursement ui only
     Route::get('self-service/employee-profile', [AdminController::class, 'employeeManagement'])->name('admin.self-service.employeeList');
+    route::get('employee-engagement/recognition-and-rewards-program',[AdminController::class, 'recognition'])->name('admin.employee-engagement.recognition');
 });
 
 Route::middleware(['auth', 'user'])->group(function () {

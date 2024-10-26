@@ -97,4 +97,8 @@ class AdminController extends Controller
         $ticket = Ticket::with('replies.user')->findOrFail($ticketId); // Eager load replies and user
         return view('admin.helpdesk.view', compact('ticket')); // Adjust view path as necessary
     }
+    public function recognition()
+    {
+        return view('admin.employee-engagement.recognition');
+    }
 }
