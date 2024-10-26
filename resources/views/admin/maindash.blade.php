@@ -4,7 +4,18 @@
 @section('active-header')Main Dashboard @endsection <!--active pageheader-->
 
 @section('content')
-<h1>Welcome to the Admin Dashboard, {{ Auth::user()->name }}</h1>
+<div class="row">
+    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="card" id="headings">
+            <div class="card-body">
+                <div class="user-avatar float-xl-left pr-4 float-none">
+                    <img src="{{ asset('template/assets/images/admin.webp') }}" alt="User Avatar" class="rounded-circle user-avatar-xl">
+                </div>
+                <h1>Welcome to the Admin Portal, {{ Auth::user()->name }}</h1>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="ecommerce-widget">
 
     <div class="row">
@@ -155,24 +166,52 @@
             </div>
         </div>
     </div>
-
     <div class="row">
-        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
-            <div class="card">
-                <h5 class="card-header">Department Category</h5>
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="card" id="headings">
                 <div class="card-body">
-                    <div id="department-category" style="height: 420px;"></div>
+                    <h2>Employee Feedback</h2>
                 </div>
             </div>
         </div>
-        {{-- <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Category</h5>
-                <div class="card-body">
-                    <div id="c3chart_category" style="height: 420px;"></div>
+                <div class="card-body border-top">
+                    <div class="alert alert-primary" role="alert">
+                        <h4 class="alert-heading">Well done!</h4>
+                        <p>Great job on the recent project! Your hard work is appreciated.</p>
+                        <hr>
+                        <p class="mb-0">Keep up the excellent work and continue to communicate openly with your team.</p>
+                    </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-body border-top">
+                    <div class="alert alert-primary" role="alert">
+                        <h4 class="alert-heading">Fantastic Effort!</h4>
+                        <p>Thank you for your dedication to improving our processes. Your input is valuable.</p>
+                        <hr>
+                        <p class="mb-0">Let’s continue to work together to achieve our goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-body border-top">
+                    <div class="alert alert-primary" role="alert">
+                        <h4 class="alert-heading">Great Collaboration!</h4>
+                        <p>Your teamwork on the recent task has made a significant impact. Thank you!</p>
+                        <hr>
+                        <p class="mb-0">Keep sharing your ideas and feedback with the team!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
 </div>
