@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\TicketReply;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class TicketReplyController extends Controller
 {
@@ -14,7 +14,7 @@ class TicketReplyController extends Controller
         $ticket = Ticket::findOrFail($ticketId);
 
         $ticket->replies()->create([
-            'user_id' => auth()->id(),
+            'user_id' => Auth::id(),
             'reply' => $request->input('reply'),
         ]);
 

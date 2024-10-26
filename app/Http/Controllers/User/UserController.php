@@ -49,7 +49,7 @@ class UserController extends Controller
         $request->validate(['reply' => 'required|string|max:255']);
         TicketReply::create([
             'ticket_id' => $ticketId,
-            'user_id' => auth()->id(),
+            'user_id' => Auth::id(),
             'reply' => $request->input('reply'),
         ]);
         return redirect()->route('user.helpdesk.show', $ticketId)->with('success', 'Reply added successfully.');

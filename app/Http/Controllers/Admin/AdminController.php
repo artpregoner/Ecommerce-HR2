@@ -77,7 +77,7 @@ class AdminController extends Controller
         // Create a new reply
         TicketReply::create([
             'ticket_id' => $ticketId,
-            'user_id' => auth()->id(), // Get the logged-in user ID
+            'user_id' => Auth::id(), // Get the logged-in user ID
             'reply' => $request->input('reply'),
         ]);
 
