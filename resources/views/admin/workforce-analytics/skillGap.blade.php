@@ -2,7 +2,7 @@
 @section('title', 'Workforce - Skill Gap')
 @section('header', 'Workforce')<!--pageheader-->
 @section('active-header', 'Skill Gap')<!--active pageheader-->
-@section('styles')
+{{-- @section('styles')
 <style>
     .container {
         max-width: 1200px;
@@ -132,17 +132,248 @@
         }
     }
 </style> 
-@endsection
+@endsection --}}
 
 @section('content')
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+        <div class="card">
+            <h5 class="card-header"><i class="fas fa-chart-line"></i> Skill Gap Analysis Tool</h5>
+            <div class="card-body">
+                <form id="form" data-parsley-validate="" novalidate="">
+                    <div class="container">
+                        <div class="form-container">
+                            <div class="form-group">
+                                <label for="person"><i class="fas fa-user"></i> Select Employee</label>
+                                <select id="person" class="form-control">
+                                    <option value="Art Javar Pregoner">Art Javar Pregoner</option>
+                                    <option value="Renz Prado">Renz Prado</option>
+                                    <option value="Kurven Palma">Kurven Palma</option>
+                                    <option value="Ronnin Baldamera">Ronnin Baldamera</option>
+                                    <option value="Khelli Mangat">Khelli Mangat</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="job"><i class="fas fa-briefcase"></i> Select Position</label>
+                                <select id="job" class="form-control">
+                                    <option value="HR Manager">HR Manager</option>
+                                    <option value="Recruitment Specialist">Recruitment Specialist</option>
+                                    <option value="Training Coordinator">Training Coordinator</option>
+                                    <option value="Employee Relations Specialist">Employee Relations Specialist</option>
+                                    <option value="Talent Acquisition Specialist">Talent Acquisition Specialist</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="date"><i class="fas fa-calendar"></i> Select Date</label>
+                                <input type="date" id="date" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" onclick="performSkillGapAnalysis()" class="btn btn-info">
+                                <i class="fas fa-analytics"></i> Analyze Skill Gaps
+                            </button>
+                            <button type="button" onclick="performSkillProfileAnalysis()" class="btn btn-light btn btn-outline-dark">
+                                <i class="fas fa-user-chart"></i> View Skill Profile
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+        <div class="card">
+            <div class="results" id="results"></div>
+            <h5 class="card-header"><i class="fas fa-clipboard-list"></i> Analysis Results</h5>
+            <div class="card-body">
+                <div id="resultContent"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('scripts')
+// The JavaScript remains the same
+<script>
+    const skillsData = {
+        "Art Javar Pregoner": {
+            "HR Manager": {
+                "Interviewing": 4,
+                "Talent Sourcing": 3,
+                "Onboarding": 2,
+                "Employee Relations": 3
+            },
+            "Recruitment Specialist": {
+                "Instructional Design": 2,
+                "Presentation Skills": 4,
+                "Employee Relations": 3,
+                "Training Delivery": 5
+            }
+        },
+        "Renz Prado": {
+            "HR Manager": {
+                "Interviewing": 3,
+                "Talent Sourcing": 4,
+                "Onboarding": 4,
+                "Employee Relations": 3
+            },
+            "Recruitment Specialist": {
+                "Instructional Design": 3,
+                "Presentation Skills": 4,
+                "Employee Relations": 3,
+                "Training Delivery": 4
+            }
+        },
+        "Kurven Palma": {
+            "HR Manager": {
+                "Interviewing": 2,
+                "Talent Sourcing": 5,
+                "Onboarding": 3,
+                "Employee Relations": 4
+            },
+            "Recruitment Specialist": {
+                "Instructional Design": 4,
+                "Presentation Skills": 3,
+                "Employee Relations": 5,
+                "Training Delivery": 4
+            }
+        },
+        "Ronnin Baldamera": {
+            "HR Manager": {
+                "Interviewing": 5,
+                "Talent Sourcing": 4,
+                "Onboarding": 3,
+                "Employee Relations": 4
+            },
+            "Recruitment Specialist": {
+                "Instructional Design": 3,
+                "Presentation Skills": 4,
+                "Employee Relations": 3,
+                "Training Delivery": 5
+            }
+        },
+        "Khelli Mangat": {
+            "HR Manager": {
+                "Interviewing": 4,
+                "Talent Sourcing": 3,
+                "Onboarding": 5,
+                "Employee Relations": 3
+            },
+            "Recruitment Specialist": {
+                "Instructional Design": 2,
+                "Presentation Skills": 4,
+                "Employee Relations": 3,
+                "Training Delivery": 4
+            }
+        }
+    };
+
+    const targetSkills = {
+        "HR Manager": {
+            "Interviewing": 5,
+            "Talent Sourcing": 4,
+            "Onboarding": 3,
+            "Employee Relations": 4
+        },
+        "Recruitment Specialist": {
+            "Instructional Design": 5,
+            "Presentation Skills": 4,
+            "Employee Relations": 3,
+            "Training Delivery": 5
+        },
+        "Training Coordinator": {
+            "Instructional Design": 5,
+            "Presentation Skills": 4,
+            "Employee Relations": 3,
+            "Training Delivery": 5
+        },
+        "Employee Relations Specialist": {
+            "Employee Relations": 5,
+            "Conflict Resolution": 4,
+            "Performance Management": 4,
+            "Coaching": 5
+        },
+        "Talent Acquisition Specialist": {
+            "Talent Sourcing": 5,
+            "Interviewing": 4,
+            "Onboarding": 3,
+            "Employer Branding": 4
+        }
+    };
+
+    function performSkillGapAnalysis() {
+        const person = document.getElementById('person').value;
+        const job = document.getElementById('job').value;
+        const personSkills = skillsData[person][job];
+        const requiredSkills = targetSkills[job];
+
+        let resultContent = '<div>';
+        for (let skill in requiredSkills) {
+            const currentLevel = personSkills[skill] || 0;
+            const requiredLevel = requiredSkills[skill];
+            const gap = requiredLevel - currentLevel;
+            const status = gap > 0 ? 'Gap' : 'On Target';
+
+            resultContent += `
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="alert alert-primary" role="alert">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Skill</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Current Level</th>
+                                            <th scope="col">Required Level</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="skill-name">${skill}</span></td>
+                                            <td><span class="skill-gap">${status}</span></td>
+                                            <td>${currentLevel}</td>
+                                            <td>${requiredLevel}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        resultContent += '</div>';
+        document.getElementById('resultContent').innerHTML = resultContent;
+        document.getElementById('results').style.display = 'block';
+    }
+
+    function performSkillProfileAnalysis() {
+        document.getElementById('results').style.display = 'block';
+        document.getElementById('resultContent').innerHTML = `<p style="color:var(--text-color);">Coming Soon: Skill profile breakdowns for enhanced strategic insights.</p>`;
+    }
+</script>
+@endsection
+
+
+
+@section('scripts')
+    <script src="{{ asset('asset/libs/js/admin/js/workforce/skillGap.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+@endsection
+{{-- @section('content')
 <h1>Workforce Analytics</h1>
 <div class="row">
     <div class="col-xl- col-lg-12 col-md-12 col-sm-12 col-12 mb-5">
-        {{-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="section-block">
             <h5 class="section-title">Justified Tabs</h5>
             <p>Takes the basic nav from above and adds the .nav-tabs class to generate a tabbed interface..</p>
-        </div> --}}
+        </div>
         <div class="tab-regular">
             <ul class="nav nav-tabs nav-fill" id="myTab7" role="tablist">
                 <li class="nav-item">
@@ -173,7 +404,7 @@
                                                 <span><i class="fa fa-fw fas"></i></span><span>20</span>
                                             </div>
                                         </div>
-                                        {{-- <div id="sparkline-revenue"></div> --}}
+                                        <div id="sparkline-revenue"></div>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -187,7 +418,7 @@
                                                 <span><i class="fa fa-fw fas"></i></span><span>5.86%</span>
                                             </div>
                                         </div>
-                                        {{-- <div id="sparkline-revenue2"></div> --}}
+                                        <div id="sparkline-revenue2"></div>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -201,7 +432,7 @@
                                                 <span>15.5%</span>
                                             </div>
                                         </div>
-                                        {{-- <div id="sparkline-revenue3"></div> --}}
+                                        <div id="sparkline-revenue3"></div>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -215,7 +446,7 @@
                                                 <span>78%</span>
                                             </div>
                                         </div>
-                                        {{-- <div id="sparkline-revenue4"></div> --}}
+                                        <div id="sparkline-revenue4"></div>
                                     </div>
                                 </div>
                         </div>
@@ -281,14 +512,4 @@
         </div>
     </div>
 </div>
-@endsection
-@section('scripts')
-    <script src="{{ asset('asset/libs/js/admin/js/workforce/skillGap.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-@endsection
-@section('scripts')
-  <script>
-    // Add any required JavaScript here for charts, interaction, etc.
-    console.log("Skill Gap Analyzer loaded");
-  </script>
-@endsection
+@endsection --}}
