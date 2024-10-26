@@ -56,7 +56,7 @@
                 <button class="btn btn-primary btn-space" type="submit">
                     <i class="icon s7-mail"></i> Send
                 </button>
-                <button type="button" class="btn btn-secondary btn-space" onclick="window.history.back();">
+                <button type="button" class="btn btn-danger btn-space" onclick="window.history.back();">
                     <i class="icon s7-close"></i> Cancel
                 </button>
             </div>
