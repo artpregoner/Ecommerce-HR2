@@ -47,8 +47,7 @@
                                     <p class="mb-2"><i class="fa fa-map-marker-alt mr-2  text-primary"></i>Quezon City<span class="m-l-10">Male<span class="m-l-20">20 Year Old</span></span>
                                     </p>
                                     <div class="mt-3">
-                                        <a href="#" class="mr-1 badge badge-light">Programmer</a>
-                                        <a href="#" class="mr-1 badge badge-light">UI Designer</a>
+                                        <a href="#" class="mr-1 badge badge-light">HR Manager</a>
                                     </div>
                                 </div>
                             </div>
@@ -82,8 +81,7 @@
                                     <p class="mb-2"><i class="fa fa-map-marker-alt mr-2  text-primary"></i>Quezon City<span class="m-l-10">Male<span class="m-l-20">20 Year Old</span></span>
                                     </p>
                                     <div class="mt-3">
-                                        <a href="#" class="mr-1 badge badge-light">Programmer</a>
-                                        <a href="#" class="mr-1 badge badge-light">Document</a>
+                                        <a href="#" class="mr-1 badge badge-light">HR Manager</a>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +115,7 @@
                                     <p class="mb-2"><i class="fa fa-map-marker-alt mr-2  text-primary"></i>Quezon City<span class="m-l-10">Male<span class="m-l-20">20 Year Old</span></span>
                                     </p>
                                     <div class="mt-3">
-                                        <a href="#" class="mr-1 badge badge-light">Document</a>
+                                        <a href="#" class="mr-1 badge badge-light">HR Manager</a>
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +149,7 @@
                                     <p class="mb-2"><i class="fa fa-map-marker-alt mr-2  text-primary"></i>Quezon City<span class="m-l-10">Male<span class="m-l-20">20 Year Old</span></span>
                                     </p>
                                     <div class="mt-3">
-                                        <a href="#" class="mr-1 badge badge-light">Document</a>
+                                        <a href="#" class="mr-1 badge badge-light">HR Manager</a>
                                     </div>
                                 </div>
                             </div>
@@ -185,8 +183,7 @@
                                     <p class="mb-2"><i class="fa fa-map-marker-alt mr-2  text-primary"></i>Quezon City<span class="m-l-10">Male<span class="m-l-20">20 Year Old</span></span>
                                     </p>
                                     <div class="mt-3">
-                                        <a href="#" class="mr-1 badge badge-light">Document</a>
-                                        <a href="#" class="mr-1 badge badge-light">UI Design</a>
+                                        <a href="#" class="mr-1 badge badge-light">HR Manager</a>
                                     </div>
                                 </div>
                             </div>
