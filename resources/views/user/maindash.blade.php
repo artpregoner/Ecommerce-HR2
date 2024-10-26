@@ -241,37 +241,35 @@
                         <div class="row">
                             <div class="col-xl-12 col-lg- col-md-7 col-sm-12 col-12">
                                 <div class="section-block">
-                                    <div class="col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12">
-                                        <div class="card">
-                                            <h5 class="card-header">My Recognitions</h5>
-                                            <div class="card-body">
-                                                <table class="table table-bordered">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Award Type</th>
-                                                            <th scope="col">From</th>
-                                                            <th scope="col">Points</th>
-                                                            <th scope="col">Date</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Performance Award</td>
-                                                            <td>HR Manager</td>
-                                                            <td>100</td>
-                                                            <td>2024-10-24</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Team Player Award</td>
-                                                            <td>Project Manager</td>
-                                                            <td>50</td>
-                                                            <td>2024-10-20</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                    <div class="card">
+                                        <h5 class="card-header">My Recognitions</h5>
+                                        <div class="card-body">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Award Type</th>
+                                                        <th scope="col">From</th>
+                                                        <th scope="col">Points</th>
+                                                        <th scope="col">Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Performance Award</td>
+                                                        <td>HR Manager</td>
+                                                        <td>100</td>
+                                                        <td>2024-10-24</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Team Player Award</td>
+                                                        <td>Project Manager</td>
+                                                        <td>50</td>
+                                                        <td>2024-10-20</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                    </div>                                        
+                                    </div>   
                                 </div>
                             </div>
                         </div>
