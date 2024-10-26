@@ -68,7 +68,7 @@
         right: 10px;
         width: 15px;
         height: 15px;
-        background-color: #463426;
+        background-color: #E9DCC9;
         border-radius: 50%; 
         cursor: pointer; 
         }

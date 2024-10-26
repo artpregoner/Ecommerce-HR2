@@ -199,21 +199,64 @@
         </div>
         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">All Employee</h5>
+                <h5 class="card-header">Register Employee Account</h5>
                 <div class="card-body">
-                    <div class="all-employee-list ct-golden-section" style="height: 315px;"></div>
-                    <div class="text-center m-t-40">
-                        <span class="legend-item mr-3">
-                                <span class="fa-xs man-color mr-1 legend-tile"><i class="fa fa-fw fa-square-full "></i></span><span class="legend-text">Man</span>
-                        </span>
-                        <span class="legend-item mr-3">
-                            <span class="fa-xs woman-color mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
-                        <span class="legend-text">Woman</span>
-                        </span>
-                        <span class="legend-item mr-3">
-                            <span class="fa-xs turnover-color mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
-                        <span class="legend-text">Turn Over</span>
-                        </span>
+                    <div class="">
+                        <!-- Button trigger modal -->
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Register</a>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <form class="splash-container" method="POST" action="{{ route('register') }}">
+                                            @if ($errors->any())
+                                                <div class="alert alert-danger">
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @endif
+                                            @csrf
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="mb-1">Registration Form</h3>
+                                                    <p>Please enter employee information.</p>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <input class="form-control form-control-lg" type="text" name="name" id="name" placeholder="Name" autocomplete="off" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input class="form-control form-control-lg" type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input class="form-control form-control-lg" name="password" id="password" type="password" placeholder="Password" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input class="form-control form-control-lg" name="password_confirmation" id="password_confirmation" type="password" placeholder="Confirm Password" required>
+                                                    </div>
+                                                    <div class="form-group pt-2">
+                                                        <button class="btn btn-block btn-primary" type="submit" value="Register">Register</button>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input class="custom-control-input" type="checkbox" required>
+                                                            <span class="custom-control-label">By creating an account, you agree to the <a href="#">terms and conditions</a></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
