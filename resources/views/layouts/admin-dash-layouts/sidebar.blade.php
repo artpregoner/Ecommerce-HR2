@@ -61,9 +61,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('admin.employee-engagement.recognition')}}">Recognition and Rewards Programs</a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link" href="form-validation.html">Engagement Metrics Overview</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </li>
