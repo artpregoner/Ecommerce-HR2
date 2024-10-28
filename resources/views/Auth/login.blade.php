@@ -76,10 +76,7 @@
 </head>
 
 <body>
-    <!-- ============================================================== -->
-    <!-- login page  -->
-    <!-- ============================================================== -->
-    <div class="top-dot" onclick="window.location='{{ route('register') }}';"></div> <!-- Add route here -->
+    <div class="top-dot" onclick="window.location='{{ route('register') }}';"></div>
     <div class="splash-container">
         <div class="card ">
             <div class="card-header text-center"><a href="#"><img src="../template/assets/images/storelogo.png" alt="logo" style="width: 200px"></a><span class="splash-description">Please enter your user information.</span></div>
@@ -90,8 +87,11 @@
                     <div class="form-group">
                         <input class="form-control form-control-lg" name="email" id="yourEmail" type="email" placeholder="Email" autocomplete="off">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group position-relative">
                         <input class="form-control form-control-lg" name="password" id="yourPassword" type="password" placeholder="Password">
+                        <span id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                            <i class="fa fa-eye"></i>
+                        </span>
                     </div>
                     <div class="form-group">
                         <label class="custom-control custom-checkbox">
@@ -110,13 +110,23 @@
             </div> --}}
         </div>
     </div>
-  
-    <!-- ============================================================== -->
-    <!-- end login page  -->
-    <!-- ============================================================== -->
-    <!-- Optional JavaScript -->
-    <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <script src="{{ asset('template/assets/vendor/jquery/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('template/assets/vendor/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('asset/libs/js/javascript.js') }}"></script>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const passwordField = document.querySelector('#yourPassword');
+    
+        togglePassword.addEventListener('click', function () {
+            // Toggle the type attribute
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            
+            // Toggle the eye icon
+            this.querySelector('i').classList.toggle('fa-eye-slash');
+        });
+    </script>
+
 </body>
- 
 </html>
