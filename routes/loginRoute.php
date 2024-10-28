@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
 
+// Login para sa Admin 
+Route::get('/secure/admin', [AuthController::class, 'adminLoginPanel'])->name('auth.adminLoginPanel');
+
 // Route para ipakita ang login form (GET request)
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

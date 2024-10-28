@@ -11,6 +11,10 @@ use Hash;
 class AuthController extends Controller
 {
     // Show login form
+    public function adminLoginPanel()
+    {
+        return view ('auth.adminLoginPanel');
+    }
     public function showLoginForm()
     {
         return view('auth.login');
