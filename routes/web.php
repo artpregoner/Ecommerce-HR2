@@ -23,10 +23,6 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/maindash', [AdminController::class, 'dashboard'])->name('admin.maindash');
-    // Workforce Analytics
-    Route::get('workforce/employee-metrics', [AdminController::class, 'employeeMetrics'])->name('employeeMetrics');
-    Route::get('workforce/skill-gap', [AdminController::class, 'skillGap'])->name('skillGap');
-    Route::get('workforce/turnover-hiring', [AdminController::class, 'turnoverHiring'])->name('turnoverHiring');
     // claims & reimbursement ui only
     Route::get('claims&reimbursement/requests', [AdminController::class, 'adminReimbursement'])->name('admin.reimbursiment.requests');
     // claims & reimbursement ui only
@@ -36,7 +32,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth', 'user'])->group(function () {
     Route::get('user/maindash', [UserController::class, 'dashboard'])->name('user.maindash');
-    Route::get('user/schedule', [UserController::class, 'self_service'])->name('user.self-service.schedule');
+
     // reimbursement
     Route::get('user/claims&reimbursement/requests', [UserController::class, 'ReimbursementRequests'])->name('reimbursement.requests');
     Route::get('user/claims&reimbursement/create', [UserController::class, 'ReimbursementCreate'])->name('reimbursement.create');
@@ -53,6 +49,7 @@ require __DIR__.'/user/selfservice/selfservice.php';
 //for hrmanager/admin
 require __DIR__.'/admin/selfservice/selfservice.php';
 require __DIR__.'/admin/settings/account.php';
+require __DIR__.'/admin/Workforce/workforce.php';
 
 
 

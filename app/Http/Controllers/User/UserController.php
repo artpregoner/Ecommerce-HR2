@@ -21,11 +21,6 @@ class UserController extends Controller
         return view('user.maindash', compact('totalTickets')); // Ensure this view exists
     }
 
-    public function self_service()
-    {
-        // Logic for showing employee profile
-        return view('user.self-service.schedule');
-    }
     // user reimbursement requests list
     public function ReimbursementRequests()
     {

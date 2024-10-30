@@ -21,7 +21,7 @@
                         <!-- ============================================================== -->
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('workforce/*') ? 'active' : '' }}" href="#" data-toggle="collapse" data-target="#submenu-1" aria-expanded="false"><i class="fas fa-fw fa-chart-bar" aria-controls="submenu-1"></i>Workforce Analytics</a>
-                        <div id="submenu-1" class="collapse submenu" style="">
+                        <div id="submenu-1" class="collapse submenu {{ request()->is('workforce*') ? 'show' : '' }}" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link {{ request()->is('workforce/skill-gap') ? 'active' : '' }}" href="{{url('workforce/skill-gap')}}">Skill Analysis Tool</a>

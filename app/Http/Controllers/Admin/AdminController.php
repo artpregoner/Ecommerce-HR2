@@ -37,19 +37,7 @@ class AdminController extends Controller
 
         return redirect()->route('admin.helpdesk.tickets')->with('success', 'Ticket deleted successfully.');
     }
-    // workforce analytics
-    public function employeeMetrics()
-    {
-        return view('admin.workforce-analytics.employeeMetrics');
-    }
-    public function skillGap()
-    {
-        return view('admin.workforce-analytics.skillGap');
-    }
-    public function turnoverHiring()
-    {
-        return view('admin.workforce-analytics.turnoverHiring');
-    }
+
     // claims & reimbursiment
     public function adminReimbursement()
     {
