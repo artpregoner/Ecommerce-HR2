@@ -14,23 +14,23 @@
                         <!-- Dashboard --> 
                         <!-- ============================================================== -->
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{url('admin/maindash')}}" aria-expanded="false" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                        <a class="nav-link {{ request()->is('admin/maindash') ? 'active' : '' }}" href="{{url('admin/maindash')}}" aria-expanded="false" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                     </li>
                         <!-- ============================================================== -->
                         <!-- Workforce Analytics -->
                         <!-- ============================================================== -->
                     <li class="nav-item">
-                        <a class="nav-link " href="#" data-toggle="collapse" data-target="#submenu-1" aria-expanded="false"><i class="fas fa-fw fa-chart-bar" aria-controls="submenu-1"></i>Workforce Analytics</a>
+                        <a class="nav-link {{ request()->is('workforce/*') ? 'active' : '' }}" href="#" data-toggle="collapse" data-target="#submenu-1" aria-expanded="false"><i class="fas fa-fw fa-chart-bar" aria-controls="submenu-1"></i>Workforce Analytics</a>
                         <div id="submenu-1" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('workforce/skill-gap')}}">Skill Analysis Tool</a>
+                                    <a class="nav-link {{ request()->is('workforce/skill-gap') ? 'active' : '' }}" href="{{url('workforce/skill-gap')}}">Skill Analysis Tool</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('workforce/employee-metrics')}}">Employee Metrics<span class="badge badge-secondary">New</span></a>
+                                    <a class="nav-link {{ request()->is('workforce/employee-metrics') ? 'active' : '' }}" href="{{url('workforce/employee-metrics')}}">Employee Metrics<span class="badge badge-secondary">New</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('workforce/turnover-hiring')}}">Turnover & Hiring Needs</a>
+                                    <a class="nav-link {{ request()->is('workforce/turnover-hiring') ? 'active' : '' }}" href="{{url('workforce/turnover-hiring')}}">Turnover & Hiring Needs</a>
                                 </li>
                             </ul>
                         </div>
@@ -39,14 +39,16 @@
                         <!-- Emloyee Self-service -->
                         <!-- ============================================================== -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="far fa-user-circle"></i>Employee Self-Service</a>
+                        <a class="nav-link {{ request()->is('self-service/*') || request()->is('employee-selfservice/*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2">
+                            <i class="far fa-user-circle"></i>Employee Self-Service
+                        </a>
                         <div id="submenu-2" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('self-service/employee-profile')}}">Employee Profiles Management<span class="badge badge-secondary">New</span></a>
+                                    <a class="nav-link {{ request()->is('self-service/employee-profile') ? 'active' : '' }}" href="{{ url('self-service/employee-profile') }}">Employee Profiles Management</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('employee-selfservice/leave-requests')}}">Employee Leave Applications</a>
+                                    <a class="nav-link {{ request()->is('employee-selfservice/leave-requests') ? 'active' : '' }}" href="{{ url('employee-selfservice/leave-requests') }}">Employee Leave Applications</a>
                                 </li>
                             </ul>
                         </div>
@@ -54,25 +56,30 @@
                         <!-- ============================================================== -->
                         <!-- Employee Engagement -->
                         <!-- ============================================================== -->
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fas fa-users"></i>Employee Engagement</a>
-                        <div id="submenu-4" class="collapse submenu" style="">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{route('admin.employee-engagement.recognition')}}">Recognition and Rewards Programs</a>
-                                </li>
-                                {{-- <li class="nav-item">
-                                    <a class="nav-link" href="form-validation.html">Engagement Metrics Overview</a>
-                                </li> --}}
-                            </ul>
-                        </div>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->is('employee-engagement/*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4">
+                                <i class="fas fa-users"></i>Employee Engagement
+                            </a>
+                            <div id="submenu-4" class="collapse submenu" style="">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('admin.employee-engagement.recognition') ? 'active' : '' }}" href="{{ route('admin.employee-engagement.recognition') }}">
+                                            Recognition and Rewards Programs
+                                        </a>
+                                    </li>
+                                    {{-- <li class="nav-item">
+                                        <a class="nav-link" href="form-validation.html">Engagement Metrics Overview</a>
+                                    </li> --}}
+                                </ul>
+                            </div>
+                        </li>
+                        
                     <div style="border-top: 1px solid #ddd; margin: 10px 0;"></div>
                     <li class="nav-divider">
                         Claims & Reimbursement
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{url('claims&reimbursement/requests')}}" aria-expanded="false" ><i class="fas fa-dollar-sign"></i>Claims & Reimbursement<span class="badge badge-success">6</span></a>
+                        <a class="nav-link {{ request()->Is('claims&reimbursement/requests') ? 'active' : '' }}" href="{{url('claims&reimbursement/requests')}}" aria-expanded="false" ><i class="fas fa-dollar-sign"></i>Claims & Reimbursement<span class="badge badge-success">6</span></a>
                     </li>
                     <div style="border-top: 1px solid #ddd; margin: 10px 0;"></div>
                         <!-- ============================================================== -->
@@ -85,7 +92,7 @@
                         <a class="nav-link" href="{{url('admin/helpdesk/tickets')}}" aria-expanded="false"><i class="fas fa-fw  fa-envelope"></i>Ticket</a>
                     </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('admin/helpdesk/tickets')}}" aria-expanded="false" ><i class="fas fa-inbox"></i>Inbox <span class="badge badge-secondary">New</span></a>
+                        <a class="nav-link {{ request()->Is('admin/helpdesk/tickets') ? 'active' : '' }}" href="{{url('admin/helpdesk/tickets')}}" aria-expanded="false" ><i class="fas fa-inbox"></i>Inbox <span class="badge badge-secondary">New</span></a>
                     </li>
                 </ul>
             </div>

@@ -14,7 +14,7 @@
                         <!-- Dashboard --> 
                         <!-- ============================================================== -->
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{url('user/maindash')}}" aria-expanded="false" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                        <a class="nav-link {{ request()->is('user/maindash') ? 'active' : '' }}" href="{{url('user/maindash')}}" aria-expanded="false" ><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
                     </li>
                         <!-- ============================================================== -->
                         <!-- Emloyee Self-service -->
@@ -24,13 +24,13 @@
                         <div id="submenu-2" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('user/employee-selfservice/leave-request')}}">Request Leave</a>
+                                    <a class="nav-link {{ request()->is('user/employee-selfservice/leave-request') ? 'active' : '' }}" href="{{url('user/employee-selfservice/leave-request')}}">Request Leave</a>
                                 </li>
                                 {{-- <li class="nav-item">
                                     <a class="nav-link" href="general.html">Leave Management </a>
                                 </li> --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('user/schedule')}}">My Schedule </a>
+                                    <a class="nav-link {{ request()->is('user/schedule') ? 'active' : '' }}" href="{{url('user/schedule')}}">My Schedule </a>
                                 </li>
                             </ul>
                         </div>
@@ -41,7 +41,7 @@
                     <div style="border-top: 1px solid #ddd; margin: 10px 0;"></div>
                     <li class="nav-divider">Claims & Reimbursement</li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{url('user/claims&reimbursement/requests')}}" aria-expanded="false" ><i class="fas fa-dollar-sign"></i>My Request<span class="badge badge-success">6</span></a>
+                        <a class="nav-link {{ request()->is('user/claims&reimbursement/requests') ? 'active' : '' }}" href="{{url('user/claims&reimbursement/requests')}}" aria-expanded="false" ><i class="fas fa-dollar-sign"></i>My Request<span class="badge badge-success">6</span></a>
                     </li>
                         <!-- ============================================================== -->
                         <!-- Helpdesk -->
@@ -49,7 +49,7 @@
                     <div style="border-top: 1px solid #ddd; margin: 10px 0;"></div>
                     <li class="nav-divider">Helpdesk</li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('user/helpdesk/tickets')}}" aria-expanded="false"><i class="fas fa-fw  fa-envelope"></i>My Ticket</a>
+                        <a class="nav-link {{ request()->is('user/helpdesk/tickets') ? 'active' : '' }}" href="{{url('user/helpdesk/tickets')}}" aria-expanded="false"><i class="fas fa-fw  fa-envelope"></i>My Ticket</a>
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link" href="{{url('helpdesk/ticket-inbox')}}" aria-expanded="false" ><i class="fas fa-inbox"></i>Inbox <span class="badge badge-secondary">New</span></a>
