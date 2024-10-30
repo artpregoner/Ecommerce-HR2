@@ -20,7 +20,7 @@
                         <!-- Emloyee Self-service -->
                         <!-- ============================================================== -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="far fa-user-circle"></i>Employee Self-Service</a>
+                        <a class="nav-link {{ request()->is('user/*') ? 'active' : '' }}" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="far fa-user-circle"></i>Employee Self-Service</a>
                         <div id="submenu-2" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
