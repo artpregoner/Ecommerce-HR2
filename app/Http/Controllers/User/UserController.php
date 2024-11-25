@@ -36,12 +36,24 @@ class UserController extends Controller
     public function show($ticketId)
     {
         $ticket = Ticket::findOrFail($ticketId); // Find the ticket by ID
+        // Ensure the user owns the ticket
+        if ($ticket->user_id !== Auth::id()) {
+            abort(403, 'Unauthorized access.');
+        }
+
         return view('user.helpdesk.view', compact('ticket'));
     }
     
     public function store(Request $request, $ticketId)
     {
+        // Find the ticket and ensure the user owns it
+        $ticket = Ticket::findOrFail($ticketId);
+        if ($ticket->user_id !== Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         $request->validate(['reply' => 'required|string|max:255']);
+        
         TicketReply::create([
             'ticket_id' => $ticketId,
             'user_id' => Auth::id(),
