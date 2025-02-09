@@ -10,8 +10,8 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <div class="email-title">
-                        <span class="icon"><i class="fas fa-inbox"></i></span> 
-                        Ticket Reply for: {{ $ticket->subject }} 
+                        <span class="icon"><i class="fas fa-inbox"></i></span>
+                        Ticket Reply for: {{ $ticket->subject }}
                     </div>
                     <button type="button" class="btn btn-primary btn-space" onclick="window.history.back();">
                         Return to Ticket Lists
@@ -25,8 +25,8 @@
             @if ($ticket->replies && count($ticket->replies) > 0)
                 @foreach($ticket->replies->reverse() as $reply) <!-- Reverse the order of replies -->
                     <div class="media chat-item {{ $reply->user_id == auth()->id() ? 'chat-right' : '' }}">
-                        <img alt="{{ $reply->user->role }}" 
-                             src="{{ asset('template/assets/images/' . ($reply->user->role == 'admin' ? 'admin.webp' : 'user1.png')) }}" 
+                        <img alt="{{ $reply->user->role }}"
+                             src="{{ asset('template/assets/images/' . ($reply->user->role == 'admin' ? 'admin.webp' : 'user1.png')) }}"
                              class="rounded-circle user-avatar-lg">
                         <div class="media-body">
                             <div class="chat-item-title">
